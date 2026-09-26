@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="it"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc;
+  --color-text: #131920;
+  --color-navbar-bg: #f9f9fb;
+  --color-bg-chat-view: #fcfcfd;
+  --color-bg-secondary: #fff;
+  --color-bg-tertiary: #f9fafb;
+  --color-bg-hover: #f3f4f6;
+  --color-surface: #f9fafb;
+  --color-surface-hover: #f3f4f6;
+  --color-surface-active: #e5e7eb;
+  --color-border: #0000001f;
+  --color-border-light: #0000000f;
+  --color-border-strong: #d1d5db;
+  --color-primary: #4200db;
+  --color-primary-dark: #35009e;
+  --color-primary-light: #8575ff;
+  --color-primary-bg: #e8e6ff;
+  --color-primary-hover-border: #35009e;
+  --color-nav-icon-active: #4200db;
+  --color-nav-hover-border: #4200db;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent);
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
+  --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
+  --color-accent: #4200db;
+  --color-accent-foreground: #4200db;
+  --color-accent-dark: #35009e;
+  --color-accent-light: #e8e6ff;
+  --color-accent-inverse: #fff;
+  --color-link: #4200db;
+  --color-primary-gradient-end: #e8e6ff;
+  --color-primary-bg-solid: #e8e6ff;
+  --color-user-bubble: #f3f3f7;
+  --color-user-bubble-text: #131920;
+  --color-text-secondary: #5e5e5e;
+  --color-text-tertiary: #656871;
+  --color-text-muted: #9ca3af;
+  --color-text-on-primary: #fff;
+  --color-success: #00802f;
+  --color-success-dark: #00471e;
+  --color-success-light: #d9ffd6;
+  --color-success-hover: #005c26;
+  --color-success-bg: #e6f5eb;
+  --color-success-border: #b3d9bf;
+  --color-success-foreground: #00802f;
+  --color-success-dark-foreground: #00471e;
+  --color-success-text: #00471e;
+  --color-error: #db0000;
+  --color-error-dark: #700000;
+  --color-error-light: #ffe0e0;
+  --color-error-hover: #ffe0e0;
+  --color-error-bg: #fceaea;
+  --color-error-border: #f2cccc;
+  --color-error-active-border: #db0000;
+  --color-error-foreground: #db0000;
+  --color-error-dark-foreground: #700000;
+  --color-error-inverse: #fff;
+  --color-error-text: #700000;
+  --color-warning: #f2b100;
+  --color-warning-dark: #573a00;
+  --color-warning-light: #fffbbd;
+  --color-warning-hover: #db9200;
+  --color-warning-bg: #fef7e6;
+  --color-warning-border: #f9dfa3;
+  --color-warning-foreground: #f2b100;
+  --color-warning-dark-foreground: #573a00;
+  --color-warning-inverse: #573a00;
+  --color-surface-warning: #fffbbd;
+  --color-text-warning: #573a00;
+  --color-info: #006ce0;
+  --color-info-dark: #002a66;
+  --color-info-light: #d1f1ff;
+  --color-info-hover: #003b8f;
+  --color-info-bg: #ebf3fc;
+  --color-info-border: #b3d1f0;
+  --color-info-foreground: #006ce0;
+  --color-info-dark-foreground: #002a66;
+  --color-info-inverse: #fff;
+  --color-overlay: #00000080;
+  --color-shadow: #00000014;
+  --color-hover: #0000000d;
+  --color-tooltip-bg: #000000d9;
+  --color-tooltip-text: #fff;
+  --color-voice-purple: #8575ff;
+  --color-voice-purple-dark: #4200db;
+  --color-voice-purple-light: #8575ff;
+  --color-voice-red: #db0000;
+  --color-voice-red-dark: #700000;
+  --color-voice-amber: #f2b100;
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 2px #0000000d;
+  --shadow-md: 0 4px 12px #00000014;
+  --color-success-bg-solid: #d9ffd6;
+  --color-error-bg-solid: #ffe0e0;
+  --color-error-border-solid: #ffe0e0;
+  --color-warning-bg-solid: #fffbbd;
+  --color-warning-text: #573a00;
+  --color-info-bg-solid: #d1f1ff;
+  --color-info-bg-solid-alt: #d1f1ff;
+  --color-info-text: #002a66;
+  --color-info-text-alt: #002a66;
+  --color-emerald: #10b981;
+  --color-teal: #4ecdc4;
+  --color-code-bg: #f3f3f7;
+  --color-code-header-bg: #f1f3f5;
+  --color-code-text: #24292e;
+  --color-code-border: #e1e4e8;
+  --color-code-muted: #6a737d;
+  --color-inline-code-bg: #f3f3f7;
+  --color-inline-code-text: #24292e;
+  --color-inline-code-border: #e1e4e8;
+  --color-scrollbar-thumb: #d1d5db;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #333;
+  --color-graph-node-text-dim: #7f8c8d;
+  --color-graph-edge-default: #95a5a6;
+  --color-graph-edge-cross: #e67e22;
+  --color-graph-edge-text: #666;
+  --color-graph-edge-stroke: #fff;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #95a5a6;
+  --color-graph-cat-file: #3498db;
+  --color-graph-cat-folder: #7f8c8d;
+  --color-graph-cat-file-aggregate: #2980b9;
+  --color-graph-cat-class: #9b59b6;
+  --color-graph-cat-function: #2ecc71;
+  --color-graph-cat-method: #1abc9c;
+  --color-graph-cat-variable: #f39c12;
+  --color-graph-cat-import: #d35400;
+  --color-graph-cat-module: #5b6abf;
+  --color-graph-cat-concept: #e74c3c;
+  --color-graph-cat-person: #ff6b6b;
+  --color-graph-cat-org: #4ecdc4;
+  --color-graph-cat-organization: #4ecdc4;
+  --color-graph-cat-product: #a29bfe;
+  --color-graph-cat-metric: #fd79a8;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #e056a0;
+  --color-graph-cat-code: #3498db;
+  --color-graph-cat-doc: #7f8c8d;
+  --color-graph-cat-url: #00b894;
+  --color-graph-cat-email: #6c5ce7;
+  --color-graph-cat-unknown: #bdc3c7;
+  --color-graph-rel-contains: #bdc3c7;
+  --color-graph-rel-extends: #9b59b6;
+  --color-graph-rel-implements: #3498db;
+  --color-graph-rel-imports: #e67e22;
+  --color-graph-rel-uses: #2ecc71;
+  --color-graph-rel-calls: #27ae60;
+  --color-graph-rel-references: #f39c12;
+  --color-graph-rel-related-to: #95a5a6;
+  --color-graph-rel-works-on: #e74c3c;
+  --color-graph-rel-owns: #1abc9c;
+  --color-graph-rel-depends-on: #e67e22;
+  --color-graph-rel-parent-of: #bdc3c7;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #9ca3af;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #f9fafb;
+  --qs-tertiary-background: #f9fafb;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracker Assenze</title>
+<style>
+  :root{
+    --bg:#f4f5f7;--surface:#fff;--surface-2:#fafbfc;--text:#172b4d;--text-secondary:#44546f;--text-muted:#8993a4;
+    --border:#dfe1e6;--border-light:#ebecf0;--primary:#0052CC;--primary-light:#e6effc;--success:#36b37e;--success-bg:#e3fcef;
+    --warning:#ff991f;--warning-bg:#fffae6;--error:#de350b;--error-bg:#ffebe6;--info:#0065ff;--info-bg:#deebff;
+    --radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-pill:100px;
+    --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:'SF Mono','Consolas','Monaco',monospace;--shadow:0 1px 3px rgba(9,30,66,.13);--shadow-lg:0 8px 24px rgba(9,30,66,.2);
+  }
+  [data-theme="dark"]{
+    --bg:#0d1117;--surface:#161b22;--surface-2:#1c2129;--text:#e6edf3;--text-secondary:#adbac7;--text-muted:#768390;
+    --border:#30363d;--border-light:#21262d;--primary:#4c9aff;--primary-light:#1c2f4a;--success:#56d364;--success-bg:#12261a;
+    --warning:#e3b341;--warning-bg:#2b2412;--error:#f85149;--error-bg:#2d1514;--info:#4c9aff;--info-bg:#16263f;
+    --shadow:0 1px 3px rgba(0,0,0,.4);--shadow-lg:0 8px 24px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.5;padding:16px;transition:background .2s,color .2s}
+  h1{font-size:22px;font-weight:700}h2{font-size:16px;font-weight:600;margin-bottom:12px}
+  .wrap{max-width:1180px;margin:0 auto}
+  .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+  .title-block{display:flex;align-items:center;gap:12px}
+  .logo{width:40px;height:40px;border-radius:var(--radius-md);background:var(--primary);color:#fff;display:grid;place-items:center;font-size:20px;font-weight:700}
+  .year-nav{display:flex;align-items:center;gap:6px}
+  .year-nav button{width:32px;height:32px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:16px;color:var(--text-secondary)}
+  .year-val{font-size:20px;font-weight:700;min-width:68px;text-align:center}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap}
+  button,.btn{font-family:inherit;font-size:13px;cursor:pointer;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);color:var(--text);padding:7px 12px;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+  button:hover,.btn:hover{background:var(--surface-2);border-color:var(--text-muted)}
+  .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .btn-primary:hover{background:#0747a6;border-color:#0747a6}
+  .btn-danger{color:var(--error);border-color:var(--error)}
+  .btn-danger:hover{background:var(--error-bg)}
+  .btn-sm{padding:4px 8px;font-size:12px}
+  .theme-toggle{font-size:15px;padding:7px 11px}
+  .tabs{display:flex;gap:4px;border-bottom:2px solid var(--border-light);margin-bottom:18px;flex-wrap:wrap}
+  .tab{padding:9px 16px;cursor:pointer;font-size:14px;font-weight:500;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;background:none;border-top:none;border-left:none;border-right:none}
+  .tab:hover{color:var(--text-secondary);background:none}
+  .tab.active{color:var(--primary);border-bottom-color:var(--primary)}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  @media(max-width:1100px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.kpi-grid{grid-template-columns:1fr}}
+  .kpi-card{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:16px;box-shadow:var(--shadow);border-top:4px solid var(--accent,var(--primary))}
+  .kpi-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .kpi-name{font-size:15px;font-weight:700}
+  .kpi-unit{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+  .kpi-residuo{font-size:30px;font-weight:700;font-family:var(--font-mono);line-height:1}
+  .kpi-residuo small{font-size:15px;color:var(--text-muted);font-weight:500}
+  .kpi-residuo-label{font-size:12px;color:var(--text-muted);margin-top:2px;margin-bottom:14px}
+  .kpi-rows{display:flex;flex-direction:column;gap:7px}
+  .kpi-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+  .kpi-row .lbl{color:var(--text-secondary)}
+  .kpi-row .val{font-family:var(--font-mono);font-weight:600}
+  .kpi-row.editable .val,.kpi-row.editable .lbl{cursor:pointer}
+  .kpi-row.editable{cursor:pointer}
+  .kpi-row.saldo-attuale{border-top:1px solid var(--border-light);padding-top:7px;margin-top:3px}
+  .kpi-row.saldo-attuale .lbl{font-weight:700;color:var(--text)}
+  .kpi-row.saldo-attuale .val{font-weight:700;color:var(--accent,var(--primary))}
+  .progress{height:7px;background:var(--border-light);border-radius:var(--radius-pill);overflow:hidden;margin-top:12px}
+  .progress .bar{height:100%;background:var(--accent,var(--primary));border-radius:var(--radius-pill);transition:width .5s}
+  .override-badge{font-size:9px;background:var(--warning-bg);color:#974f0c;padding:1px 6px;border-radius:var(--radius-pill);font-weight:700;text-transform:uppercase}
+  .panel{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow);margin-bottom:18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--text-muted);font-weight:600;padding:9px 10px;border-bottom:2px solid var(--border);font-size:11px;text-transform:uppercase;white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid var(--border-light);vertical-align:middle}
+  tr:hover td{background:var(--surface-2)}
+  td.num,th.num{text-align:right;font-family:var(--font-mono)}
+  .totrow td{font-weight:700;border-top:2px solid var(--border);background:var(--surface-2)}
+  .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px}
+  .cal-month-title{font-size:18px;font-weight:700;text-transform:capitalize}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+  .cal-dow{text-align:center;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;padding:4px 0}
+  .cal-cell{min-height:74px;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:4px 5px;background:var(--surface-2);cursor:pointer;display:flex;flex-direction:column;gap:2px;transition:all .12s}
+  .cal-cell:hover{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+  .cal-cell.empty{background:transparent;border:none;cursor:default}
+  .cal-cell.weekend{background:var(--surface)}
+  .cal-cell.today{border-color:var(--primary);border-width:2px}
+  .cal-cell .daynum{font-size:12px;font-weight:600;color:var(--text-secondary)}
+  .cal-cell .holiday-tag{font-size:8px;color:var(--error);font-weight:600;line-height:1.1}
+  .cal-event{font-size:9px;padding:1px 4px;border-radius:3px;color:#fff;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;font-size:12px}
+  .legend-item{display:flex;align-items:center;gap:5px}
+  .legend-dot{width:12px;height:12px;border-radius:3px}
+  .badge{font-size:11px;padding:2px 8px;border-radius:var(--radius-pill);font-weight:600}
+  .badge.saldo{background:var(--info-bg);color:#0747a6}
+  .badge.nosaldo{background:var(--border-light);color:var(--text-muted)}
+  .modal-overlay{position:fixed;inset:0;background:rgba(9,30,66,.54);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--surface);border-radius:var(--radius-lg);width:100%;max-width:460px;box-shadow:var(--shadow-lg);max-height:90vh;overflow-y:auto}
+  .modal-head{padding:18px 20px;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center}
+  .modal-head h2{margin:0}
+  .modal-body{padding:20px}
+  .modal-foot{padding:14px 20px;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;gap:8px}
+  .close-x{background:none;border:none;font-size:22px;color:var(--text-muted);cursor:pointer;width:28px;height:28px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;font-weight:600;color:var(--text-secondary);margin-bottom:5px}
+  .field input,.field select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:inherit;font-size:14px;color:var(--text);background:var(--surface)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-light)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hint{font-size:11px;color:var(--text-muted);margin-top:4px}
+  .radio-group{display:flex;gap:8px;flex-wrap:wrap}
+  .radio-chip{flex:1;min-width:90px;text-align:center;padding:8px;border:1px solid var(--border);border-radius:var(--radius-sm);cursor:pointer;font-size:13px}
+  .radio-chip.sel{border-color:var(--primary);background:var(--primary-light);color:var(--primary);font-weight:600}
+  .cat-color-dot{width:14px;height:14px;border-radius:4px;display:inline-block;vertical-align:middle;margin-right:6px}
+  .empty-state{text-align:center;padding:40px 20px;color:var(--text-muted)}
+  .cat-manage-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);gap:8px}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--text);color:var(--bg);padding:10px 18px;border-radius:var(--radius-md);font-size:13px;box-shadow:var(--shadow-lg);opacity:0;transition:all .3s;z-index:200}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  .muted{color:var(--text-muted);font-size:12px}
+  .mt8{margin-top:8px}.mb12{margin-bottom:12px}
+  .flex-between{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  select.mini{padding:5px 8px;font-size:13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);font-family:inherit;color:var(--text)}
+  textarea{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:12px;resize:vertical;color:var(--text);background:var(--surface)}
+  textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-light)}
+  .cloud-status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:var(--radius-pill);font-size:13px;font-weight:600}
+  .cloud-status .dot{width:9px;height:9px;border-radius:50%}
+  .cloud-status.offline{background:var(--border-light);color:var(--text-secondary)}
+  .cloud-status.offline .dot{background:var(--text-muted)}
+  .cloud-status.online{background:var(--success-bg);color:#0a6c46}
+  .cloud-status.online .dot{background:var(--success)}
+  .cloud-status.syncing{background:var(--warning-bg);color:#974f0c}
+  .cloud-status.syncing .dot{background:var(--warning)}
+  .cloud-status.error{background:var(--error-bg);color:var(--error)}
+  .cloud-status.error .dot{background:var(--error)}
+  code{background:var(--border-light);padding:1px 5px;border-radius:3px;font-family:var(--font-mono);font-size:12px}
+  .chart-wrap{overflow-x:auto}
+  .barchart{display:flex;align-items:flex-end;gap:8px;height:240px;padding:10px 4px;min-width:520px}
+  .barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%}
+  .bar{width:70%;background:var(--accent,var(--primary));border-radius:4px 4px 0 0;min-height:1px;transition:height .4s}
+  .barval{font-size:10px;font-family:var(--font-mono);color:var(--text-secondary)}
+  .barlbl{font-size:10px;color:var(--text-muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="title-block">
+      <div class="logo">A</div>
+      <div>
+        <h1>Tracker Assenze</h1>
+        <div class="muted">Ferie, permessi ed ex festività · CCNL Telecomunicazioni</div>
+      </div>
+    </div>
+    <div class="year-nav">
+      <button id="yearPrev">‹</button>
+      <span class="year-val" id="yearVal">2026</span>
+      <button id="yearNext">›</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <label for="refDate" class="muted" style="font-size:12px">Calcola a:</label>
+      <input type="date" id="refDateInput" style="padding:6px 8px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text);font-family:inherit;font-size:13px">
+      <button id="refToday" class="btn-sm" title="Torna a oggi">Oggi</button>
+    </div>
+    <div class="toolbar">
+      <button id="btnTheme" class="theme-toggle" title="Tema chiaro/scuro">🌙</button>
+      <button id="btnAdd" class="btn-primary">+ Aggiungi assenza</button>
+      <button id="btnExport">Backup</button>
+      <button id="btnImport">Ripristina</button>
+      <input type="file" id="importFile" accept="application/json" style="display:none">
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="dashboard">Resoconto</button>
+    <button class="tab" data-tab="calendar">Calendario</button>
+    <button class="tab" data-tab="list">Elenco assenze</button>
+    <button class="tab" data-tab="settings">Impostazioni</button>
+  </div>
+
+  <div id="tab-dashboard" class="tabview">
+    <div class="kpi-grid" id="kpiGrid"></div>
+    <div id="totalSummary" class="panel" style="border-top:4px solid var(--primary);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-around"></div>
+    <div class="panel">
+      <div class="flex-between mb12">
+        <h2 style="margin:0">Resoconto mensile — <span id="reportYear"></span></h2>
+        <select class="mini" id="reportMetric"></select>
+      </div>
+      <div class="chart-wrap"><div class="barchart" id="monthlyChart"></div></div>
+    </div>
+    <div class="panel">
+      <h2>Dettaglio mensile</h2>
+      <div class="chart-wrap"><table id="monthlyTable"></table></div>
+    </div>
+  </div>
+
+  <div id="tab-calendar" class="tabview" style="display:none">
+    <div class="panel">
+      <div class="cal-nav">
+        <div style="display:flex;align-items:center;gap:8px">
+          <button id="calPrev">‹</button>
+          <span class="cal-month-title" id="calMonthTitle"></span>
+          <button id="calNext">›</button>
+          <button id="calToday" class="btn-sm">Oggi</button>
+        </div>
+        <button class="btn-primary btn-sm" id="calAdd">+ Aggiungi</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend" id="calLegend"></div>
+    </div>
+  </div>
+
+  <div id="tab-list" class="tabview" style="display:none">
+    <div class="panel">
+      <div class="flex-between mb12">
+        <h2 style="margin:0">Assenze — <span id="listYear"></span></h2>
+        <select class="mini" id="listFilter"></select>
+      </div>
+      <div class="chart-wrap"><table id="listTable"></table></div>
+    </div>
+  </div>
+
+  <div id="tab-settings" class="tabview" style="display:none">
+    <div class="panel">
+      <h2>Maturazione annuale</h2>
+      <p class="muted mb12">Monte annuo che matura pro-rata mese per mese.</p>
+      <div class="field-row">
+        <div class="field"><label>Ferie — giorni/anno</label><input type="number" id="setFerie" step="0.5"></div>
+        <div class="field"><label>Ex Festività — ore/anno</label><input type="number" id="setExfest" step="0.5"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Permessi — ore/anno</label><input type="number" id="setPermessi" step="0.5"></div>
+        <div class="field"><label>Fattore consumo ferie</label><input type="number" id="setFactor" step="0.05"><div class="hint">1,2 = ogni giorno di ferie goduto scala 1,2 gg (6gg→5gg)</div></div>
+      </div>
+      <button class="btn-primary" id="saveSettings">Salva impostazioni</button>
+    </div>
+    <div class="panel">
+      <h2>Categorie di assenza</h2>
+      <p class="muted mb12">Le categorie "con saldo" incidono sui conteggi; le altre sono solo visibili nel calendario.</p>
+      <div id="catList"></div>
+      <button class="btn-primary mt8" id="btnAddCat">+ Nuova categoria</button>
+    </div>
+    <div class="panel">
+      <h2>Festività locali</h2>
+      <p class="muted mb12">Festività locali (es. santo patrono): escluse dai giorni lavorativi e mostrate nel calendario.</p>
+      <div id="holidayList"></div>
+      <button class="btn-primary mt8" id="btnAddHoliday">+ Nuova festività locale</button>
+    </div>
+    <div class="panel">
+      <h2>Sincronizzazione cloud (Firebase)</h2>
+      <p class="muted mb12">Opzionale. Sincronizza i dati tra i tuoi dispositivi. Se non la configuri, l'app funziona in locale con Backup/Ripristino.</p>
+      <div id="cloudStatus" class="cloud-status offline"><span class="dot"></span><span id="cloudStatusText">Solo locale — cloud non configurato</span></div>
+      <div class="field mt8"><label>Configurazione Firebase (incolla l'oggetto firebaseConfig)</label>
+        <textarea id="fbConfig" rows="7" placeholder="{ apiKey: '...', authDomain: '...', projectId: '...', appId: '...' }"></textarea>
+        <div class="hint">Firebase Console → Impostazioni progetto → Le tue app → App web.</div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>ID spazio dati (utente)</label><input type="text" id="fbSpaceId" placeholder="es. mariano"><div class="hint">Utenti diversi = ID diversi.</div></div>
+        <div class="field"><label>Chiave segreta</label><input type="text" id="fbChiave" placeholder="una passphrase a tua scelta"><div class="hint">Stessa su tutti i tuoi dispositivi.</div></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn-primary" id="btnCloudConnect">Connetti e sincronizza</button>
+        <button id="btnCloudSync" style="display:none">Forza sincronizzazione</button>
+        <button class="btn-danger" id="btnCloudDisconnect" style="display:none">Disconnetti</button>
+      </div>
+      <div class="hint mt8">Nota: il cloud funziona quando apri il file nel browser via http(s), non nell'anteprima sandbox.</div>
+      <details style="margin-top:14px">
+        <summary style="cursor:pointer;font-size:13px;color:var(--primary);font-weight:600">Guida: come configurare Firebase (una volta sola)</summary>
+        <ol style="font-size:13px;color:var(--text-secondary);margin:10px 0 0 18px;line-height:1.8">
+          <li>Vai su <code>console.firebase.google.com</code> e accedi con un account Google.</li>
+          <li>Clicca <strong>Crea un progetto</strong>, dai un nome (es. "tracker-assenze") e completa (puoi disattivare Google Analytics).</li>
+          <li>Nel menu a sinistra: <strong>Crea → Firestore Database → Crea database</strong>. Scegli <strong>modalità produzione</strong> e una regione (es. <code>europe-west</code>).</li>
+          <li>Vai su <strong>Regole</strong> (Rules) di Firestore, incolla le regole del file <code>REGOLE-FIRESTORE.txt</code> (Opzione A) e premi <strong>Pubblica</strong>.</li>
+          <li>Apri <strong>Impostazioni progetto</strong> (ingranaggio in alto) → scorri fino a <strong>Le tue app</strong> → clicca l'icona web <code>&lt;/&gt;</code>.</li>
+          <li>Registra l'app (dai un nome qualsiasi, senza hosting) → copia l'oggetto <code>firebaseConfig</code> che appare.</li>
+          <li>Torna qui: incolla <code>firebaseConfig</code> nel campo sopra, scegli un <strong>ID spazio</strong> (es. il tuo nome) e una <strong>chiave segreta</strong> a piacere.</li>
+          <li>Premi <strong>Connetti e sincronizza</strong>. Sugli altri dispositivi usa lo <strong>stesso ID spazio e stessa chiave</strong>.</li>
+        </ol>
+        <div class="hint" style="margin:10px 0 0 18px">Ricorda: apri la pagina via http(s) (server locale o hosting), non con doppio clic (file://) e non nell'anteprima.</div>
+      </details>
+    </div>
+
+    <div class="panel">
+      <h2>Dati</h2>
+      <p class="muted mb12">Dati salvati localmente in questo browser. Usa Backup/Ripristina per spostarli.</p>
+      <button id="btnExport2">Esporta backup</button>
+      <button id="btnImport2">Importa backup</button>
+      <button class="btn-danger" id="btnReset">Cancella tutti i dati</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="absModal"><div class="modal">
+  <div class="modal-head"><h2 id="absModalTitle">Aggiungi assenza</h2><button class="close-x" data-close="">×</button></div>
+  <div class="modal-body">
+    <div class="field"><label>Categoria</label><select id="absCat"></select></div>
+    <div class="field-row">
+      <div class="field"><label>Dal</label><input type="date" id="absStart"><div class="hint" id="absStartPreview"></div></div>
+      <div class="field"><label>Al</label><input type="date" id="absEnd"><div class="hint" id="absEndPreview"></div></div>
+    </div>
+    <div class="field" id="absHoursWrap" style="display:none"><label>Ore totali</label><input type="number" id="absHours" step="0.5" min="0"><div class="hint" id="absHoursHint"></div></div>
+    <div class="field" id="absDaysInfo" style="display:none"><label>Giorni lavorativi</label><div id="absDaysCount" style="font-family:var(--font-mono);font-weight:600;font-size:15px"></div><div class="hint" id="absDaysHint"></div></div>
+    <div class="field"><label>Nota (opzionale)</label><input type="text" id="absNote" placeholder="es. Ponte, visita medica..."></div>
+  </div>
+  <div class="modal-foot"><button class="btn-danger" id="absDelete" style="display:none">Elimina</button><div style="flex:1"></div><button data-close="">Annulla</button><button class="btn-primary" id="absSave">Salva</button></div>
+</div></div>
+
+<div class="modal-overlay" id="catModal"><div class="modal">
+  <div class="modal-head"><h2 id="catModalTitle">Nuova categoria</h2><button class="close-x" data-close="">×</button></div>
+  <div class="modal-body">
+    <div class="field"><label>Nome categoria</label><input type="text" id="catName" placeholder="es. Malattia..."></div>
+    <div class="field-row">
+      <div class="field"><label>Colore</label><input type="color" id="catColor" value="#6554c0" style="height:40px;padding:3px"></div>
+      <div class="field"><label>Unità</label><select id="catUnit"><option value="days">Giorni</option><option value="hours">Ore</option></select></div>
+    </div>
+    <div class="field"><label>Incide sui saldi?</label>
+      <div class="radio-group"><div class="radio-chip" data-saldo="false">No — solo calendario</div><div class="radio-chip" data-saldo="true">Sì — scala il monte</div></div>
+    </div>
+    <div class="field" id="catFactorWrap" style="display:none"><label>Fattore di consumo</label><input type="number" id="catFactor" step="0.05" value="1"><div class="hint">1 = neutro. Ferie 1,2.</div></div>
+  </div>
+  <div class="modal-foot"><button class="btn-danger" id="catDelete" style="display:none">Elimina</button><div style="flex:1"></div><button data-close="">Annulla</button><button class="btn-primary" id="catSave">Salva</button></div>
+</div></div>
+
+<div class="modal-overlay" id="holModal"><div class="modal">
+  <div class="modal-head"><h2 id="holModalTitle">Nuova festività locale</h2><button class="close-x" data-close="">×</button></div>
+  <div class="modal-body">
+    <div class="field"><label>Nome festività</label><input type="text" id="holName" placeholder="es. San Patrono..."></div>
+    <div class="field-row">
+      <div class="field"><label>Giorno</label><input type="number" id="holDay" min="1" max="31"></div>
+      <div class="field"><label>Mese</label><select id="holMonth"></select></div>
+    </div>
+    <div class="field"><label>Ricorrenza</label>
+      <div class="radio-group"><div class="radio-chip" data-rec="true">Ricorrente ogni anno</div><div class="radio-chip" data-rec="false">Solo un anno</div></div>
+      <div class="hint">Di default ricorrente ogni anno, senza interruzione.</div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label id="holFromLabel">Valida dall'anno (opz.)</label><input type="number" id="holFrom" placeholder="es. 2024"><div class="hint" id="holFromHint">Vuoto = da sempre.</div></div>
+      <div class="field" id="holToWrap"><label>Valida fino all'anno (opz.)</label><input type="number" id="holTo" placeholder="es. 2030"><div class="hint">Vuoto = senza interruzione.</div></div>
+    </div>
+  </div>
+  <div class="modal-foot"><button class="btn-danger" id="holDelete" style="display:none">Elimina</button><div style="flex:1"></div><button data-close="">Annulla</button><button class="btn-primary" id="holSave">Salva</button></div>
+</div></div>
+
+<div class="modal-overlay" id="ovModal"><div class="modal">
+  <div class="modal-head"><h2 id="ovTitle">Override</h2><button class="close-x" data-close="">×</button></div>
+  <div class="modal-body">
+    <p class="muted mb12" id="ovDesc"></p>
+    <div class="field"><label id="ovAutoLabel">Valore automatico</label><div id="ovAuto" style="font-family:var(--font-mono);font-weight:700;font-size:20px"></div></div>
+    <div class="field"><label>Override manuale (vuoto = automatico)</label><input type="number" id="ovInput" step="0.5" placeholder="Automatico"></div>
+  </div>
+  <div class="modal-foot"><button class="btn-danger" id="ovClear">Usa automatico</button><div style="flex:1"></div><button data-close="">Annulla</button><button class="btn-primary" id="ovSave">Salva</button></div>
+</div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+var MESI=['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+var DOW=['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+var STORAGE_KEY='trackerAssenze_v1';
+var THEME_KEY='trackerAssenze_theme';
+
+var __LS=null;
+try{ __LS=window.localStorage; var __t='__t'+Date.now(); __LS.setItem(__t,'1'); __LS.removeItem(__t); }catch(e){ __LS=null; }
+var __mem={};
+function lsGet(k){ if(__LS){ try{ return __LS.getItem(k); }catch(e){} } return (k in __mem)?__mem[k]:null; }
+function lsSet(k,v){ if(__LS){ try{ __LS.setItem(k,v); return; }catch(e){} } __mem[k]=v; }
+function lsRemove(k){ if(__LS){ try{ __LS.removeItem(k); return; }catch(e){} } delete __mem[k]; }
+
+function defaultState(){
+  return {
+    settings:{ferie:25,exfest:32,permessi:72,factor:1.2},
+    categories:[
+      {id:'ferie',name:'Ferie',color:'#0052CC',unit:'days',saldo:true,factor:1.2,system:true},
+      {id:'exfest',name:'Ex Festivita',color:'#6554c0',unit:'hours',saldo:true,factor:1,system:true},
+      {id:'permessi',name:'Permessi retrib.',color:'#00a3bf',unit:'hours',saldo:true,factor:1,system:true},
+      {id:'bo',name:'BO Banca Ore',color:'#ffab00',unit:'hours',saldo:true,factor:1,system:true},
+      {id:'malattia',name:'Malattia',color:'#de350b',unit:'days',saldo:false,factor:1},
+      {id:'sangue',name:'Donazione sangue',color:'#ff991f',unit:'days',saldo:false,factor:1},
+      {id:'trasferta',name:'Viaggio di lavoro',color:'#36b37e',unit:'days',saldo:false,factor:1}
+    ],
+    absences:[],
+    overrides:{},
+    localHolidays:[]
+  };
+}
+
+var state=loadState();
+var refDate=new Date(); refDate.setHours(0,0,0,0);
+var currentYear=refDate.getFullYear();
+var calYear=currentYear, calMonth=new Date().getMonth();
+var editingAbsId=null, editingCatId=null, editingHolId=null, ovKey=null, ovMode=null, ovCatId=null;
+var absHoursTouched=false;
+var fbApp=null, fbDb=null, fbUnsub=null, cloudOn=false, applyingRemote=false, fbSdkLoading=false, fbSdkQueue=[];
+var CLOUD_CFG_KEY='trackerAssenze_cloudCfg_v1';
+var clientId=(Math.random().toString(36).slice(2)+Date.now().toString(36));
+
+function loadState(){
+  try{
+    var raw=lsGet(STORAGE_KEY);
+    if(!raw) return defaultState();
+    var s=JSON.parse(raw); var d=defaultState();
+    return {
+      settings:Object.assign({},d.settings,s.settings||{}),
+      categories:s.categories||d.categories,
+      absences:s.absences||[],
+      overrides:s.overrides||{},
+      localHolidays:s.localHolidays||[]
+    };
+  }catch(e){ return defaultState(); }
+}
+function save(){ lsSet(STORAGE_KEY, JSON.stringify(state)); if(cloudOn && !applyingRemote){ cloudPush(); } }
+
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+function pad(n){ return String(n).padStart(2,'0'); }
+function ymd(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+function parseYmd(s){ var p=s.split('-'); return new Date(Number(p[0]),Number(p[1])-1,Number(p[2])); }
+function catById(id){ for(var i=0;i<state.categories.length;i++){ if(state.categories[i].id===id) return state.categories[i]; } return null; }
+function fmtNum(n){ return (Math.round(n*100)/100).toString().replace('.',','); }
+function fmtItDate(iso){ if(!iso) return ''; var p=iso.split('-'); return p[2]+'/'+p[1]+'/'+p[0]; }
+function hoursToDays(h){ return fmtNum(h/8); }
+function isWeekend(d){ var w=d.getDay(); return w===0||w===6; }
+
+function easterMonday(year){
+  var a=year%19,b=Math.floor(year/100),c=year%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),month=Math.floor((h+l-7*m+114)/31),day=((h+l-7*m+114)%31)+1;
+  var easter=new Date(year,month-1,day); var em=new Date(easter); em.setDate(easter.getDate()+1); return em;
+}
+function holidaysFor(year){
+  var fixed=[[1,1,'Capodanno'],[1,6,'Epifania'],[4,25,'Liberazione'],[5,1,'Festa Lavoro'],[6,2,'Repubblica'],[8,15,'Ferragosto'],[11,1,'Ognissanti'],[12,8,'Immacolata'],[12,25,'Natale'],[12,26,'S.Stefano']];
+  var map={};
+  for(var i=0;i<fixed.length;i++){ map[year+'-'+pad(fixed[i][0])+'-'+pad(fixed[i][1])]=fixed[i][2]; }
+  map[ymd(easterMonday(year))]='Pasquetta';
+  var lh=state.localHolidays||[];
+  for(var j=0;j<lh.length;j++){
+    var h=lh[j];
+    var frm=(h.fromYear!=null&&h.fromYear!=='')?Number(h.fromYear):null;
+    var to=(h.toYear!=null&&h.toYear!=='')?Number(h.toYear):null;
+    var applies;
+    if(h.recurring){ applies=(frm==null||year>=frm)&&(to==null||year<=to); }
+    else{ applies=(frm!=null?year===frm:true); }
+    if(applies&&h.month&&h.day){ map[year+'-'+pad(h.month)+'-'+pad(h.day)]=h.name||'Festivita locale'; }
+  }
+  return map;
+}
+function workingDaysInRange(start,end,hol,filterYear,filterMonth){
+  var count=0; var cur=new Date(start);
+  while(cur<=end){
+    var inY=(filterYear==null)||(cur.getFullYear()===filterYear);
+    var inM=(filterMonth==null)||(cur.getMonth()===filterMonth);
+    if(inY&&inM&&!isWeekend(cur)&&!hol[ymd(cur)]) count++;
+    cur.setDate(cur.getDate()+1);
+  }
+  return count;
+}
+
+function accruedUpTo(annual,year){
+  var ry=refDate.getFullYear();
+  if(year<ry) return annual;
+  if(year>ry) return 0;
+  return annual*(refDate.getMonth()+1)/12;
+}
+function annualFor(catId){
+  if(catId==='ferie') return state.settings.ferie;
+  if(catId==='exfest') return state.settings.exfest;
+  if(catId==='permessi') return state.settings.permessi;
+  return 0;
+}
+function consumedFor(catId,year){
+  var cat=catById(catId); if(!cat) return 0;
+  var hol=holidaysFor(year); var total=0;
+  // cap: se l'anno visualizzato è quello della data di riferimento, conta solo fino a refDate;
+  // se l'anno è passato rispetto a refDate conta tutto; se futuro, nulla.
+  var ry=refDate.getFullYear();
+  var cap=null;
+  if(year===ry) cap=refDate;
+  else if(year>ry) return 0;
+  for(var i=0;i<state.absences.length;i++){
+    var a=state.absences[i]; if(a.catId!==catId) continue;
+    var s=parseYmd(a.start), e=parseYmd(a.end);
+    var eEff=e; if(cap && e>cap) eEff=cap;
+    if(cap && s>cap) continue; // assenza interamente dopo la data di riferimento
+    if(cat.unit==='hours'){
+      var totWD=workingDaysInRange(s,e,hol,null,null)||1;               // ripartizione sul totale reale
+      var yrWD=workingDaysInRange(s,eEff,hol,year,null);                // giorni dell'anno fino al cap
+      total+=(a.hours||0)*(yrWD/totWD);
+    } else {
+      var wd=workingDaysInRange(s,eEff,hol,year,null);
+      total+=wd*(cat.factor||1);
+    }
+  }
+  return total;
+}
+function minYear(){ return new Date().getFullYear()-10; }
+function prevResiduo(catId,year){
+  var key=year+'_'+catId;
+  if(state.overrides[key]!=null&&state.overrides[key]!=='') return {val:Number(state.overrides[key]),manual:true};
+  return {val:autoPrevResiduo(catId,year),manual:false};
+}
+function autoPrevResiduo(catId,year){
+  var py=year-1;
+  if(py<minYear()) return 0;
+  var cat=catById(catId); if(!cat||!cat.saldo) return 0;
+  if(catId==='permessi') return 0;
+  if(catId==='bo'){
+    var boPrevPrev=prevResiduo('bo',py).val;
+    var boMaturedPy=boMaturato(py);
+    var boConsumedPy=consumedFor('bo',py);
+    return Math.max(0, boPrevPrev+boMaturedPy-boConsumedPy);
+  }
+  var annual=annualFor(catId);
+  var matured=annual;
+  var consumed=consumedFor(catId,py);
+  var prev=prevResiduo(catId,py).val;
+  return Math.max(0, matured-consumed+prev);
+}
+function residuoForPermessi(year){
+  var annual=annualFor('permessi');
+  var consumed=consumedFor('permessi',year);
+  var prev=prevResiduo('permessi',year).val;
+  return annual-consumed+prev;
+}
+function boMaturatoOverride(year){
+  var key=year+'_bo_maturato'; var v=state.overrides[key];
+  return (v!=null&&v!=='')?{val:Number(v),manual:true}:{val:null,manual:false};
+}
+function boMaturatoAuto(year){ return residuoForPermessi(year-1); }
+function boMaturato(year){ var ov=boMaturatoOverride(year); return ov.manual?ov.val:boMaturatoAuto(year); }
+
+function summaryFor(catId,year){
+  var isBO=(catId==='bo');
+  var annual=annualFor(catId);
+  var accruedYTD, consumed;
+  if(isBO){ accruedYTD=boMaturato(year); consumed=consumedFor('bo',year); }
+  else { accruedYTD=accruedUpTo(annual,year); consumed=consumedFor(catId,year); }
+  var prev=prevResiduo(catId,year);
+  var residuo=accruedYTD-consumed+prev.val;
+  var matManual = isBO ? boMaturatoOverride(year).manual : false;
+  return {annual:annual,accruedYTD:accruedYTD,consumed:consumed,prev:prev,residuo:residuo,isBO:isBO,matManual:matManual};
+}
+
+function renderKPIs(){
+  var grid=document.getElementById('kpiGrid'); grid.innerHTML='';
+  var sal=state.categories.filter(function(c){return c.saldo;});
+  sal.forEach(function(cat){
+    var s=summaryFor(cat.id,currentYear);
+    var isHours=(cat.unit==='hours');
+    var ferieFactor=(cat.factor||1);
+    var unit=isHours?'ore':'giorni';
+    function vfmt(x){ return isHours ? (fmtNum(x)+' <span class="muted" style="font-weight:400">('+hoursToDays(x)+' gg)</span>') : fmtNum(x); }
+    var denom=(s.accruedYTD+s.prev.val)||1;
+    var pct=Math.min(100,Math.max(0,(s.consumed/denom)*100));
+    var isBO=s.isBO;
+    var prevLabel=isBO?('Residuo BO '+(currentYear-1)):('Residuo '+(currentYear-1));
+    var matBadge=isBO?(s.matManual?' <span class="override-badge">manuale</span>':' <span style="font-size:10px;color:var(--text-muted)">da Permessi '+(currentYear-1)+'</span>'):'';
+    var prevBadge=s.prev.manual?' <span class="override-badge">manuale</span>':'';
+
+    var rows='';
+    if(isBO){
+      rows+='<div class="kpi-row editable" data-ovmat="bo"><span class="lbl">Maturato (a oggi)'+matBadge+'</span><span class="val">'+vfmt(s.accruedYTD)+'</span></div>';
+    } else {
+      rows+='<div class="kpi-row"><span class="lbl">Maturato (a oggi)</span><span class="val">'+vfmt(s.accruedYTD)+'</span></div>';
+    }
+    rows+='<div class="kpi-row"><span class="lbl">Goduto'+(isBO?' (a oggi)':'')+'</span><span class="val">'+vfmt(s.consumed)+'</span></div>';
+    rows+='<div class="kpi-row editable" data-ov="'+cat.id+'"><span class="lbl">'+prevLabel+prevBadge+'</span><span class="val">'+vfmt(s.prev.val)+'</span></div>';
+    if(!isBO){ rows+='<div class="kpi-row"><span class="lbl">Maturando annuo</span><span class="val">'+vfmt(s.annual)+'</span></div>'; }
+    rows+='<div class="kpi-row saldo-attuale"><span class="lbl">Saldo attuale</span><span class="val">'+vfmt(s.prev.val+s.accruedYTD-s.consumed)+'</span></div>';
+
+    var card=document.createElement('div');
+    card.className='kpi-card';
+    card.style.setProperty('--accent',cat.color);
+    card.innerHTML='<div class="kpi-head"><span class="kpi-name">'+cat.name+'</span><span class="kpi-unit">'+unit+'</span></div>'+
+      '<div class="kpi-residuo">'+fmtNum(s.residuo)+' <small>'+unit+'</small>'+(isHours?'<div class="muted" style="font-size:12px;font-weight:500">= '+hoursToDays(s.residuo)+' giorni</div>':'')+((cat.id==='ferie'&&ferieFactor&&ferieFactor!==1)?'<div class="muted" style="font-size:12px;font-weight:500">netto = '+fmtNum(s.residuo/ferieFactor)+' giorni (/'+fmtNum(ferieFactor)+')</div>':'')+'</div>'+
+      '<div class="kpi-residuo-label">Saldo rimanente</div>'+
+      '<div class="kpi-rows">'+rows+'</div>'+
+      '<div class="progress"><div class="bar" style="width:'+pct+'%"></div></div>';
+    grid.appendChild(card);
+  });
+  var ovs=grid.querySelectorAll('[data-ov]');
+  for(var i=0;i<ovs.length;i++){ (function(el){ el.addEventListener('click',function(){ openOverride(el.getAttribute('data-ov')); }); })(ovs[i]); }
+  var mats=grid.querySelectorAll('[data-ovmat]');
+  for(var j=0;j<mats.length;j++){ (function(el){ el.addEventListener('click',function(){ openMaturato(el.getAttribute('data-ovmat')); }); })(mats[j]); }
+}
+
+function renderTotalSummary(){
+  var box=document.getElementById('totalSummary'); if(!box) return;
+  // ferie: saldo in giorni (gia scalati x1.2). Giorni effettivi fruibili = saldo / 1.2
+  var ferieCat=catById('ferie');
+  var ferieSaldo=ferieCat?summaryFor('ferie',currentYear).residuo:0;
+  var ferieFactor=(ferieCat&&ferieCat.factor)?ferieCat.factor:1.2;
+  var ferieGiorniEff=ferieFactor?(ferieSaldo/ferieFactor):ferieSaldo;
+  // tutti i saldi in ORE (categorie con saldo e unita hours)
+  var oreTot=0;
+  state.categories.forEach(function(c){ if(c.saldo&&c.unit==='hours'){ oreTot+=summaryFor(c.id,currentYear).residuo; } });
+  var giorniDaOre=oreTot/8;
+  var giorniTotali=ferieGiorniEff+giorniDaOre;
+  box.innerHTML=
+    '<div style="text-align:center">'+
+      '<div style="font-size:34px;font-weight:700;font-family:var(--font-mono);line-height:1;color:var(--primary)">'+fmtNum(giorniTotali)+' <small style="font-size:15px;color:var(--text-muted)">giorni</small></div>'+
+      '<div class="muted" style="margin-top:4px">Giorni totali di assenza disponibili<br><span style="font-size:10px">ferie/'+fmtNum(ferieFactor)+' + tutti i saldi ore/8</span></div>'+
+    '</div>'+
+    '<div style="text-align:center">'+
+      '<div style="font-size:34px;font-weight:700;font-family:var(--font-mono);line-height:1;color:var(--warning)">'+fmtNum(oreTot)+' <small style="font-size:15px;color:var(--text-muted)">ore</small></div>'+
+      '<div class="muted" style="margin-top:4px">Ore totali disponibili<br><span style="font-size:10px">solo saldi in ore (Ex Fest. + Permessi + BO)</span></div>'+
+    '</div>';
+}
+
+function monthlyConsumption(catId,year){
+  var cat=catById(catId); var hol=holidaysFor(year); var arr=[0,0,0,0,0,0,0,0,0,0,0,0];
+  for(var i=0;i<state.absences.length;i++){
+    var a=state.absences[i]; if(a.catId!==catId) continue;
+    var s=parseYmd(a.start), e=parseYmd(a.end);
+    for(var m=0;m<12;m++){
+      if(cat.unit==='hours'){
+        var totWD=workingDaysInRange(s,e,hol,null,null)||1;
+        var mWD=workingDaysInRange(s,e,hol,year,m);
+        arr[m]+=(a.hours||0)*(mWD/totWD);
+      } else {
+        var wd=workingDaysInRange(s,e,hol,year,m);
+        arr[m]+=wd*(cat.factor||1);
+      }
+    }
+  }
+  return arr;
+}
+function renderMonthlyChart(){
+  var metric=document.getElementById('reportMetric').value;
+  var cat=catById(metric); if(!cat) return;
+  var data=monthlyConsumption(metric,currentYear).map(function(v){return Math.round(v*100)/100;});
+  var maxv=Math.max.apply(null,data.concat([1]));
+  var box=document.getElementById('monthlyChart'); box.innerHTML='';
+  for(var m=0;m<12;m++){
+    var h=maxv>0?(data[m]/maxv*180):0;
+    var col=document.createElement('div'); col.className='barcol';
+    col.innerHTML='<div class="barval">'+(data[m]>0?fmtNum(data[m]):'')+'</div>'+
+      '<div class="bar" style="height:'+h+'px;background:'+cat.color+'"></div>'+
+      '<div class="barlbl">'+MESI[m].slice(0,3)+'</div>';
+    box.appendChild(col);
+  }
+}
+function renderMonthlyTable(){
+  var cats=state.categories.filter(function(c){return c.saldo;});
+  var html='<thead><tr><th>Mese</th>';
+  cats.forEach(function(c){ html+='<th class="num">'+c.name+'<br><span style="font-weight:400">('+(c.unit==='hours'?'ore':'gg')+')</span></th>'; });
+  html+='</tr></thead><tbody>';
+  var md=cats.map(function(c){return monthlyConsumption(c.id,currentYear);});
+  var totals=cats.map(function(){return 0;});
+  for(var m=0;m<12;m++){
+    html+='<tr><td>'+MESI[m]+'</td>';
+    cats.forEach(function(c,ci){ var v=md[ci][m]; totals[ci]+=v; html+='<td class="num">'+(v>0?fmtNum(v):'<span class="muted">-</span>')+'</td>'; });
+    html+='</tr>';
+  }
+  html+='<tr class="totrow"><td>Totale goduto</td>';
+  cats.forEach(function(c,ci){ html+='<td class="num">'+fmtNum(totals[ci])+'</td>'; });
+  html+='</tr><tr class="totrow"><td>Saldo rimanente</td>';
+  cats.forEach(function(c){ var s=summaryFor(c.id,currentYear); html+='<td class="num">'+fmtNum(s.residuo)+'</td>'; });
+  html+='</tr></tbody>';
+  document.getElementById('monthlyTable').innerHTML=html;
+}
+
+function absencesOnDay(ds){
+  var d=parseYmd(ds); var out=[];
+  for(var i=0;i<state.absences.length;i++){
+    var a=state.absences[i]; var s=parseYmd(a.start), e=parseYmd(a.end);
+    if(d>=s&&d<=e) out.push(a);
+  }
+  return out;
+}
+function renderCalendar(){
+  document.getElementById('calMonthTitle').textContent=MESI[calMonth]+' '+calYear;
+  var grid=document.getElementById('calGrid'); grid.innerHTML='';
+  for(var w=0;w<7;w++){ var dd=document.createElement('div'); dd.className='cal-dow'; dd.textContent=DOW[w]; grid.appendChild(dd); }
+  var hol=holidaysFor(calYear);
+  var first=new Date(calYear,calMonth,1);
+  var startDow=first.getDay(); startDow=(startDow===0)?6:startDow-1;
+  var dim=new Date(calYear,calMonth+1,0).getDate();
+  var todayStr=ymd(new Date());
+  for(var i=0;i<startDow;i++){ var em=document.createElement('div'); em.className='cal-cell empty'; grid.appendChild(em); }
+  for(var day=1;day<=dim;day++){
+    var d=new Date(calYear,calMonth,day); var ds=ymd(d);
+    var cell=document.createElement('div');
+    cell.className='cal-cell'+(isWeekend(d)?' weekend':'')+(ds===todayStr?' today':'');
+    var holName=hol[ds];
+    cell.innerHTML='<span class="daynum">'+day+'</span>'+(holName?'<span class="holiday-tag">'+holName+'</span>':'');
+    var evs=absencesOnDay(ds);
+    evs.forEach(function(a){
+      var cat=catById(a.catId); if(!cat) return;
+      var ev=document.createElement('div'); ev.className='cal-event'; ev.style.background=cat.color; ev.textContent=cat.name;
+      ev.title=cat.name+(a.note?(' - '+a.note):'');
+      ev.addEventListener('click',function(e){ e.stopPropagation(); openAbsence(a.id); });
+      cell.appendChild(ev);
+    });
+    (function(dstr){ cell.addEventListener('click',function(){ openAbsence(null,dstr); }); })(ds);
+    grid.appendChild(cell);
+  }
+  var leg=document.getElementById('calLegend'); leg.innerHTML='';
+  state.categories.forEach(function(c){
+    var item=document.createElement('div'); item.className='legend-item';
+    item.innerHTML='<span class="legend-dot" style="background:'+c.color+'"></span>'+c.name+' <span class="badge '+(c.saldo?'saldo':'nosaldo')+'">'+(c.saldo?'saldo':'no saldo')+'</span>';
+    leg.appendChild(item);
+  });
+}
+
+function renderList(){
+  var filter=document.getElementById('listFilter').value;
+  var rows=state.absences.filter(function(a){ return parseYmd(a.start).getFullYear()===currentYear||parseYmd(a.end).getFullYear()===currentYear; })
+    .filter(function(a){ return filter==='all'||a.catId===filter; })
+    .sort(function(a,b){ return a.start<b.start?1:-1; });
+  var html='<thead><tr><th>Categoria</th><th>Dal</th><th>Al</th><th class="num">Quantita</th><th>Nota</th><th></th></tr></thead><tbody>';
+  if(rows.length===0){ html+='<tr><td colspan="6"><div class="empty-state">Nessuna assenza registrata per questo anno</div></td></tr>'; }
+  var hol=holidaysFor(currentYear);
+  rows.forEach(function(a){
+    var cat=catById(a.catId); if(!cat) return;
+    var qty;
+    if(cat.unit==='hours'){
+      qty=fmtNum(a.hours||0)+' ore'+((a.perDay&&a.hoursPerDay!=null)?(' <span class="muted">('+fmtNum(a.hoursPerDay)+'h/giorno)</span>'):'');
+    } else {
+      var wd=workingDaysInRange(parseYmd(a.start),parseYmd(a.end),hol,null,null);
+      qty=wd+' gg'+((cat.saldo&&cat.factor!==1)?(' ('+fmtNum(wd*cat.factor)+' scalati)'):'');
+    }
+    html+='<tr><td><span class="cat-color-dot" style="background:'+cat.color+'"></span>'+cat.name+'</td>'+
+      '<td>'+fmtItDate(a.start)+'</td><td>'+fmtItDate(a.end)+'</td>'+
+      '<td class="num">'+qty+'</td><td>'+(a.note||'<span class="muted">-</span>')+'</td>'+
+      '<td><button class="btn-sm" data-edit="'+a.id+'">Modifica</button></td></tr>';
+  });
+  html+='</tbody>';
+  document.getElementById('listTable').innerHTML=html;
+  var eds=document.getElementById('listTable').querySelectorAll('[data-edit]');
+  for(var i=0;i<eds.length;i++){ (function(b){ b.addEventListener('click',function(){ openAbsence(b.getAttribute('data-edit')); }); })(eds[i]); }
+}
+
+function renderSettings(){
+  document.getElementById('setFerie').value=state.settings.ferie;
+  document.getElementById('setExfest').value=state.settings.exfest;
+  document.getElementById('setPermessi').value=state.settings.permessi;
+  document.getElementById('setFactor').value=state.settings.factor;
+  var list=document.getElementById('catList'); list.innerHTML='';
+  state.categories.forEach(function(c){
+    var row=document.createElement('div'); row.className='cat-manage-row';
+    row.innerHTML='<div><span class="cat-color-dot" style="background:'+c.color+'"></span><strong>'+c.name+'</strong>'+
+      '<span class="muted"> &middot; '+(c.unit==='hours'?'ore':'giorni')+((c.factor&&c.factor!==1)?(' &middot; fattore '+fmtNum(c.factor)):'')+'</span>'+
+      '<span class="badge '+(c.saldo?'saldo':'nosaldo')+'" style="margin-left:6px">'+(c.saldo?'incide sul saldo':'solo calendario')+'</span></div>'+
+      '<button class="btn-sm" data-editcat="'+c.id+'">Modifica</button>';
+    list.appendChild(row);
+  });
+  var ecs=list.querySelectorAll('[data-editcat]');
+  for(var i=0;i<ecs.length;i++){ (function(b){ b.addEventListener('click',function(){ openCat(b.getAttribute('data-editcat')); }); })(ecs[i]); }
+  renderHolidays();
+}
+
+function renderHolidays(){
+  var list=document.getElementById('holidayList'); if(!list) return; list.innerHTML='';
+  var hs=(state.localHolidays||[]).slice().sort(function(a,b){ return (a.month-b.month)||(a.day-b.day); });
+  if(hs.length===0){ list.innerHTML='<div class="muted" style="padding:6px 0">Nessuna festivita locale.</div>'; return; }
+  hs.forEach(function(h){
+    var period;
+    if(h.recurring){
+      var frm=(h.fromYear!=null&&h.fromYear!=='')?h.fromYear:null;
+      var to=(h.toYear!=null&&h.toYear!=='')?h.toYear:null;
+      if(frm&&to) period='ricorrente '+frm+'-'+to;
+      else if(frm) period='ricorrente dal '+frm;
+      else if(to) period='ricorrente fino al '+to;
+      else period='ricorrente ogni anno';
+    } else { period=(h.fromYear!=null&&h.fromYear!=='')?('solo '+h.fromYear):'un solo anno'; }
+    var row=document.createElement('div'); row.className='cat-manage-row';
+    row.innerHTML='<div><span class="cat-color-dot" style="background:var(--error)"></span><strong>'+(h.name||'Festivita locale')+'</strong>'+
+      '<span class="muted"> &middot; '+pad(h.day)+'/'+pad(h.month)+' &middot; '+period+'</span></div>'+
+      '<button class="btn-sm" data-edithol="'+h.id+'">Modifica</button>';
+    list.appendChild(row);
+  });
+  var ehs=list.querySelectorAll('[data-edithol]');
+  for(var i=0;i<ehs.length;i++){ (function(b){ b.addEventListener('click',function(){ openHoliday(b.getAttribute('data-edithol')); }); })(ehs[i]); }
+}
+
+function fillSelect(sel,includeAll){
+  sel.innerHTML=includeAll?'<option value="all">Tutte le categorie</option>':'';
+  state.categories.forEach(function(c){ var o=document.createElement('option'); o.value=c.id; o.textContent=c.name; sel.appendChild(o); });
+}
+function fillReportMetric(){
+  var sel=document.getElementById('reportMetric'); var cur=sel.value; sel.innerHTML='';
+  state.categories.forEach(function(c){ var o=document.createElement('option'); o.value=c.id; o.textContent=c.name+' ('+(c.unit==='hours'?'ore':'giorni')+')'; sel.appendChild(o); });
+  if(cur){ for(var i=0;i<state.categories.length;i++){ if(state.categories[i].id===cur){ sel.value=cur; break; } } }
+}
+
+function openAbsence(id,presetDate){
+  editingAbsId=id;
+  fillSelect(document.getElementById('absCat'),false);
+  document.getElementById('absModalTitle').textContent=id?'Modifica assenza':'Aggiungi assenza';
+  document.getElementById('absDelete').style.display=id?'inline-flex':'none';
+  if(id){
+    var a=null; for(var i=0;i<state.absences.length;i++){ if(state.absences[i].id===id){ a=state.absences[i]; break; } }
+    document.getElementById('absCat').value=a.catId;
+    document.getElementById('absStart').value=a.start;
+    document.getElementById('absEnd').value=a.end;
+    document.getElementById('absHours').value=(a.perDay&&a.hoursPerDay!=null)?a.hoursPerDay:(a.hours||'');
+    document.getElementById('absNote').value=a.note||'';
+    absHoursTouched=(a.hours!=null&&a.hours!=='');
+  } else {
+    var ds=presetDate||ymd(new Date());
+    document.getElementById('absStart').value=ds;
+    document.getElementById('absEnd').value=ds;
+    document.getElementById('absHours').value='';
+    document.getElementById('absNote').value='';
+    absHoursTouched=false;
+  }
+  updateAbsUI();
+  document.getElementById('absModal').classList.add('open');
+}
+function updateAbsUI(){
+  var cat=catById(document.getElementById('absCat').value); if(!cat) return;
+  var sp=document.getElementById('absStartPreview'), ep=document.getElementById('absEndPreview');
+  sp.textContent=fmtItDate(document.getElementById('absStart').value);
+  ep.textContent=fmtItDate(document.getElementById('absEnd').value);
+  var hoursWrap=document.getElementById('absHoursWrap'), daysInfo=document.getElementById('absDaysInfo');
+  var s=document.getElementById('absStart').value, e=document.getElementById('absEnd').value;
+  if(cat.unit==='hours'){
+    hoursWrap.style.display='block'; daysInfo.style.display='none';
+    if(!absHoursTouched&&s&&e){
+      var hol=holidaysFor(parseYmd(s).getFullYear());
+      var wd=workingDaysInRange(parseYmd(s),parseYmd(e),hol,null,null);
+      document.getElementById('absHours').value=wd*8;
+    }
+    document.getElementById('absHoursHint').textContent=absHoursTouched?'Valore inserito manualmente.':'Default 8 ore per giorno lavorativo. Modificabile.';
+  } else {
+    hoursWrap.style.display='none'; daysInfo.style.display='block';
+    if(s&&e){
+      var hol2=holidaysFor(parseYmd(s).getFullYear());
+      var wd2=workingDaysInRange(parseYmd(s),parseYmd(e),hol2,null,null);
+      document.getElementById('absDaysCount').textContent=wd2+' giorni lavorativi';
+      var hint='Weekend e festivita esclusi automaticamente.';
+      if(cat.saldo&&cat.factor&&cat.factor!==1) hint+=' Scala '+fmtNum(wd2*cat.factor)+' gg dal monte (fattore '+fmtNum(cat.factor)+').';
+      document.getElementById('absDaysHint').textContent=hint;
+    }
+  }
+}
+function saveAbsence(){
+  var catId=document.getElementById('absCat').value;
+  var start=document.getElementById('absStart').value, end=document.getElementById('absEnd').value;
+  var cat=catById(catId);
+  if(!start||!end){ toast('Inserisci le date'); return; }
+  if(parseYmd(end)<parseYmd(start)){ toast('La data finale precede quella iniziale'); return; }
+  var hours=cat.unit==='hours'?Number(document.getElementById('absHours').value||0):null;
+  if(cat.unit==='hours'&&!hours){ toast('Inserisci le ore'); return; }
+  var perDay=false, hoursPerDay=null;
+  if(cat.unit==='hours'){
+    var hol=holidaysFor(parseYmd(start).getFullYear());
+    var wd=workingDaysInRange(parseYmd(start),parseYmd(end),hol,null,null);
+    if(wd>1&&hours<8*wd){
+      var totale=hours*wd;
+      var msg='Hai inserito '+fmtNum(hours)+' ore su '+wd+' giorni lavorativi (meno di 8 ore/giorno).\n\n'+
+        'OK = '+fmtNum(hours)+' ore PER OGNI giorno (totale '+fmtNum(totale)+' ore).\n'+
+        'Annulla = torna alla schermata per correggere.';
+      if(confirm(msg)){ hours=totale; perDay=true; hoursPerDay=hours/wd; }
+      else return;
+    }
+  }
+  var obj={id:editingAbsId||uid(),catId:catId,start:start,end:end,hours:cat.unit==='hours'?hours:null,perDay:perDay,hoursPerDay:hoursPerDay,note:document.getElementById('absNote').value.trim()};
+  if(editingAbsId){ for(var i=0;i<state.absences.length;i++){ if(state.absences[i].id===editingAbsId){ state.absences[i]=obj; break; } } }
+  else state.absences.push(obj);
+  save(); closeModals(); renderAll(); toast('Assenza salvata');
+}
+function deleteAbsence(){
+  if(!editingAbsId) return;
+  state.absences=state.absences.filter(function(x){return x.id!==editingAbsId;});
+  save(); closeModals(); renderAll(); toast('Assenza eliminata');
+}
+
+function openCat(id){
+  editingCatId=id;
+  document.getElementById('catModalTitle').textContent=id?'Modifica categoria':'Nuova categoria';
+  var delBtn=document.getElementById('catDelete');
+  if(id){
+    var c=catById(id);
+    document.getElementById('catName').value=c.name;
+    document.getElementById('catColor').value=c.color;
+    document.getElementById('catUnit').value=c.unit;
+    document.getElementById('catFactor').value=c.factor||1;
+    setSaldoChips(c.saldo);
+    delBtn.style.display=c.system?'none':'inline-flex';
+  } else {
+    document.getElementById('catName').value='';
+    document.getElementById('catColor').value='#6554c0';
+    document.getElementById('catUnit').value='days';
+    document.getElementById('catFactor').value=1;
+    setSaldoChips(false);
+    delBtn.style.display='none';
+  }
+  document.getElementById('catModal').classList.add('open');
+}
+function setSaldoChips(val){
+  var chips=document.querySelectorAll('#catModal .radio-chip');
+  for(var i=0;i<chips.length;i++){ chips[i].classList.toggle('sel',(chips[i].getAttribute('data-saldo')==='true')===val); }
+  document.getElementById('catFactorWrap').style.display=val?'block':'none';
+}
+function currentSaldoChip(){ var sel=document.querySelector('#catModal .radio-chip.sel'); return sel?sel.getAttribute('data-saldo')==='true':false; }
+function saveCat(){
+  var name=document.getElementById('catName').value.trim();
+  if(!name){ toast('Inserisci un nome'); return; }
+  var saldo=currentSaldoChip();
+  var data={name:name,color:document.getElementById('catColor').value,unit:document.getElementById('catUnit').value,saldo:saldo,factor:saldo?Number(document.getElementById('catFactor').value||1):1};
+  if(editingCatId){ var c=catById(editingCatId); for(var k in data){ c[k]=data[k]; } }
+  else state.categories.push(Object.assign({id:uid()},data));
+  save(); closeModals(); renderAll(); toast('Categoria salvata');
+}
+function deleteCat(){
+  var c=catById(editingCatId); if(!c||c.system) return;
+  var hasAbs=state.absences.some(function(a){return a.catId===editingCatId;});
+  if(hasAbs&&!confirm('Ci sono assenze in questa categoria. Eliminare comunque?')) return;
+  if(hasAbs) state.absences=state.absences.filter(function(a){return a.catId!==editingCatId;});
+  state.categories=state.categories.filter(function(x){return x.id!==editingCatId;});
+  save(); closeModals(); renderAll(); toast('Categoria eliminata');
+}
+
+function openHoliday(id){
+  editingHolId=id;
+  var sel=document.getElementById('holMonth'); sel.innerHTML='';
+  for(var m=0;m<12;m++){ var o=document.createElement('option'); o.value=m+1; o.textContent=MESI[m]; sel.appendChild(o); }
+  document.getElementById('holModalTitle').textContent=id?'Modifica festivita locale':'Nuova festivita locale';
+  document.getElementById('holDelete').style.display=id?'inline-flex':'none';
+  if(id){
+    var h=null; for(var i=0;i<state.localHolidays.length;i++){ if(state.localHolidays[i].id===id){ h=state.localHolidays[i]; break; } }
+    document.getElementById('holName').value=h.name||'';
+    document.getElementById('holDay').value=h.day||'';
+    document.getElementById('holMonth').value=h.month||1;
+    document.getElementById('holFrom').value=(h.fromYear!=null)?h.fromYear:'';
+    document.getElementById('holTo').value=(h.toYear!=null)?h.toYear:'';
+    setRecChips(h.recurring!==false);
+  } else {
+    document.getElementById('holName').value='';
+    document.getElementById('holDay').value='';
+    document.getElementById('holMonth').value=1;
+    document.getElementById('holFrom').value='';
+    document.getElementById('holTo').value='';
+    setRecChips(true);
+  }
+  document.getElementById('holModal').classList.add('open');
+}
+function setRecChips(val){
+  var chips=document.querySelectorAll('#holModal .radio-chip');
+  for(var i=0;i<chips.length;i++){ chips[i].classList.toggle('sel',(chips[i].getAttribute('data-rec')==='true')===val); }
+  document.getElementById('holToWrap').style.display=val?'block':'none';
+  document.getElementById('holFromLabel').textContent=val?"Valida dall'anno (opz.)":"Anno";
+  document.getElementById('holFromHint').textContent=val?'Vuoto = da sempre.':'Anno in cui cade.';
+}
+function currentRecChip(){ var sel=document.querySelector('#holModal .radio-chip.sel'); return sel?sel.getAttribute('data-rec')==='true':true; }
+function saveHoliday(){
+  var name=document.getElementById('holName').value.trim();
+  var day=Number(document.getElementById('holDay').value||0), month=Number(document.getElementById('holMonth').value||0);
+  if(!name){ toast('Inserisci il nome'); return; }
+  if(day<1||day>31||month<1||month>12){ toast('Giorno/mese non validi'); return; }
+  var rec=currentRecChip();
+  var fromV=document.getElementById('holFrom').value, toV=document.getElementById('holTo').value;
+  var data={name:name,day:day,month:month,recurring:rec,fromYear:fromV!==''?Number(fromV):null,toYear:(rec&&toV!=='')?Number(toV):null};
+  if(!state.localHolidays) state.localHolidays=[];
+  if(editingHolId){ for(var i=0;i<state.localHolidays.length;i++){ if(state.localHolidays[i].id===editingHolId){ for(var k in data){ state.localHolidays[i][k]=data[k]; } break; } } }
+  else state.localHolidays.push(Object.assign({id:uid()},data));
+  save(); closeModals(); renderAll(); toast('Festivita salvata');
+}
+function deleteHoliday(){
+  if(!editingHolId) return;
+  state.localHolidays=state.localHolidays.filter(function(x){return x.id!==editingHolId;});
+  save(); closeModals(); renderAll(); toast('Festivita eliminata');
+}
+
+function openOverride(catId){
+  ovMode='prev'; ovCatId=catId; ovKey=currentYear+'_'+catId;
+  var cat=catById(catId);
+  var auto=autoPrevResiduo(catId,currentYear);
+  document.getElementById('ovTitle').textContent='Residuo anno precedente';
+  document.getElementById('ovDesc').textContent=catId==='bo'
+    ? (cat.name+': di default è il saldo Banca Ore a fine '+(currentYear-1)+'.')
+    : (cat.name+': residuo maturato nel '+(currentYear-1)+' riportato al '+currentYear+'.');
+  document.getElementById('ovAutoLabel').textContent='Valore automatico';
+  document.getElementById('ovAuto').textContent=fmtNum(auto)+' '+(cat.unit==='hours'?'ore':'giorni');
+  var cur=state.overrides[ovKey];
+  document.getElementById('ovInput').value=(cur!=null&&cur!=='')?cur:'';
+  document.getElementById('ovModal').classList.add('open');
+}
+function openMaturato(catId){
+  ovMode='mat'; ovCatId=catId; ovKey=currentYear+'_bo_maturato';
+  var cat=catById(catId);
+  var auto=boMaturatoAuto(currentYear);
+  document.getElementById('ovTitle').textContent='Maturato Banca Ore';
+  document.getElementById('ovDesc').textContent=cat.name+': di default il maturato = residuo Permessi retribuiti del '+(currentYear-1)+'.';
+  document.getElementById('ovAutoLabel').textContent='Maturato automatico';
+  document.getElementById('ovAuto').textContent=fmtNum(auto)+' ore';
+  var cur=state.overrides[ovKey];
+  document.getElementById('ovInput').value=(cur!=null&&cur!=='')?cur:'';
+  document.getElementById('ovModal').classList.add('open');
+}
+function saveOverride(){
+  var v=document.getElementById('ovInput').value;
+  if(v==='') delete state.overrides[ovKey]; else state.overrides[ovKey]=Number(v);
+  save(); closeModals(); renderAll(); toast('Valore aggiornato');
+}
+function clearOverride(){ delete state.overrides[ovKey]; save(); closeModals(); renderAll(); toast('Uso valore automatico'); }
+
+function closeModals(){ var ms=document.querySelectorAll('.modal-overlay'); for(var i=0;i<ms.length;i++){ ms[i].classList.remove('open'); } }
+
+function exportData(){
+  var blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  var url=URL.createObjectURL(blob); var a=document.createElement('a');
+  a.href=url; a.download='backup_assenze_'+ymd(new Date())+'.json'; a.click(); URL.revokeObjectURL(url);
+  toast('Backup esportato');
+}
+function importData(file){
+  var r=new FileReader();
+  r.onload=function(e){ try{ var s=JSON.parse(e.target.result); state=Object.assign(defaultState(),s); save(); renderAll(); toast('Backup ripristinato'); }catch(err){ toast('File non valido'); } };
+  r.readAsText(file);
+}
+function resetData(){ if(confirm('Cancellare TUTTI i dati?')){ lsRemove(STORAGE_KEY); state=defaultState(); renderAll(); toast('Dati cancellati'); } }
+
+var toastTimer;
+function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(function(){ t.classList.remove('show'); },2200); }
+
+function applyTheme(t){
+  if(t==='dark'){ document.documentElement.setAttribute('data-theme','dark'); document.getElementById('btnTheme').textContent='\u2600\uFE0F'; }
+  else { document.documentElement.removeAttribute('data-theme'); document.getElementById('btnTheme').textContent='\uD83C\uDF19'; }
+}
+function toggleTheme(){
+  var cur=lsGet(THEME_KEY)==='dark'?'light':'dark';
+  lsSet(THEME_KEY,cur); applyTheme(cur);
+}
+
+function renderAll(){
+  document.getElementById('yearVal').textContent=currentYear;
+  document.getElementById('reportYear').textContent=currentYear;
+  document.getElementById('listYear').textContent=currentYear;
+  renderKPIs();
+  renderTotalSummary();
+  fillReportMetric();
+  renderMonthlyChart();
+  renderMonthlyTable();
+  renderCalendar();
+  fillSelect(document.getElementById('listFilter'),true);
+  renderList();
+  renderSettings();
+}
+
+/* eventi */
+var tabs=document.querySelectorAll('.tab');
+for(var t=0;t<tabs.length;t++){
+  tabs[t].addEventListener('click',function(){
+    for(var k=0;k<tabs.length;k++){ tabs[k].classList.remove('active'); }
+    this.classList.add('active');
+    var views=document.querySelectorAll('.tabview');
+    for(var v=0;v<views.length;v++){ views[v].style.display='none'; }
+    document.getElementById('tab-'+this.getAttribute('data-tab')).style.display='block';
+  });
+}
+document.getElementById('yearPrev').onclick=function(){ currentYear--; syncRefFromYear(); renderAll(); };
+document.getElementById('yearNext').onclick=function(){ currentYear++; syncRefFromYear(); renderAll(); };
+document.getElementById('btnAdd').onclick=function(){ openAbsence(null); };
+document.getElementById('calAdd').onclick=function(){ openAbsence(null); };
+document.getElementById('calPrev').onclick=function(){ calMonth--; if(calMonth<0){calMonth=11;calYear--;} renderCalendar(); };
+document.getElementById('calNext').onclick=function(){ calMonth++; if(calMonth>11){calMonth=0;calYear++;} renderCalendar(); };
+document.getElementById('calToday').onclick=function(){ var n=new Date(); calYear=n.getFullYear(); calMonth=n.getMonth(); renderCalendar(); };
+document.getElementById('reportMetric').onchange=renderMonthlyChart;
+document.getElementById('listFilter').onchange=renderList;
+document.getElementById('absCat').onchange=function(){ absHoursTouched=false; updateAbsUI(); };
+document.getElementById('absStart').onchange=function(){
+  var s=document.getElementById('absStart').value;
+  var e=document.getElementById('absEnd').value;
+  // se la data finale è vuota o precedente alla nuova iniziale, allineala
+  if(s && (!e || parseYmd(e)<parseYmd(s))){ document.getElementById('absEnd').value=s; }
+  updateAbsUI();
+};
+document.getElementById('absEnd').onchange=updateAbsUI;
+document.getElementById('absHours').addEventListener('input',function(){ absHoursTouched=true; });
+document.getElementById('absSave').onclick=saveAbsence;
+document.getElementById('absDelete').onclick=deleteAbsence;
+document.getElementById('btnAddCat').onclick=function(){ openCat(null); };
+document.getElementById('catSave').onclick=saveCat;
+document.getElementById('catDelete').onclick=deleteCat;
+var catChips=document.querySelectorAll('#catModal .radio-chip');
+for(var cc=0;cc<catChips.length;cc++){ (function(chip){ chip.addEventListener('click',function(){ setSaldoChips(chip.getAttribute('data-saldo')==='true'); }); })(catChips[cc]); }
+document.getElementById('btnAddHoliday').onclick=function(){ openHoliday(null); };
+document.getElementById('holSave').onclick=saveHoliday;
+document.getElementById('holDelete').onclick=deleteHoliday;
+var recChips=document.querySelectorAll('#holModal .radio-chip');
+for(var rc=0;rc<recChips.length;rc++){ (function(chip){ chip.addEventListener('click',function(){ setRecChips(chip.getAttribute('data-rec')==='true'); }); })(recChips[rc]); }
+document.getElementById('ovSave').onclick=saveOverride;
+document.getElementById('ovClear').onclick=clearOverride;
+document.getElementById('saveSettings').onclick=function(){
+  state.settings.ferie=Number(document.getElementById('setFerie').value||0);
+  state.settings.exfest=Number(document.getElementById('setExfest').value||0);
+  state.settings.permessi=Number(document.getElementById('setPermessi').value||0);
+  state.settings.factor=Number(document.getElementById('setFactor').value||1);
+  var f=catById('ferie'); if(f) f.factor=state.settings.factor;
+  save(); renderAll(); toast('Impostazioni salvate');
+};
+document.getElementById('btnExport').onclick=exportData;
+document.getElementById('btnExport2').onclick=exportData;
+document.getElementById('btnImport').onclick=function(){ document.getElementById('importFile').click(); };
+document.getElementById('btnImport2').onclick=function(){ document.getElementById('importFile').click(); };
+document.getElementById('importFile').onchange=function(e){ if(e.target.files[0]) importData(e.target.files[0]); e.target.value=''; };
+document.getElementById('btnReset').onclick=resetData;
+document.getElementById('btnTheme').onclick=toggleTheme;
+var closers=document.querySelectorAll('[data-close]');
+for(var cl=0;cl<closers.length;cl++){ closers[cl].onclick=closeModals; }
+var overlays=document.querySelectorAll('.modal-overlay');
+for(var ov=0;ov<overlays.length;ov++){
+  (function(o){
+    var down=false;
+    o.addEventListener('mousedown',function(e){ down=(e.target===o); });
+    o.addEventListener('click',function(e){ if(e.target===o&&down) closeModals(); down=false; });
+  })(overlays[ov]);
+}
+
+/* ===== SINCRONIZZAZIONE CLOUD (Firebase, on-demand) ===== */
+function loadCloudCfg(){ try{ return JSON.parse(lsGet(CLOUD_CFG_KEY))||{}; }catch(e){ return {}; } }
+function saveCloudCfg(c){ lsSet(CLOUD_CFG_KEY, JSON.stringify(c)); }
+function hashStr(str){ var h=5381,i; for(i=0;i<str.length;i++){ h=((h<<5)+h)+str.charCodeAt(i); h=h&0xffffffff; } return (h>>>0).toString(36); }
+function docIdFrom(sp,ch){ return String(sp||'default').replace(/[^a-zA-Z0-9_-]/g,'_')+'_'+hashStr((sp||'')+'::'+(ch||'')); }
+
+function setCloudStatus(st,txt){
+  var el=document.getElementById('cloudStatus'); if(!el) return;
+  el.className='cloud-status '+st;
+  document.getElementById('cloudStatusText').textContent=txt;
+  document.getElementById('btnCloudSync').style.display=(st==='online'||st==='syncing')?'inline-flex':'none';
+  document.getElementById('btnCloudDisconnect').style.display=(st!=='offline')?'inline-flex':'none';
+  document.getElementById('btnCloudConnect').textContent=cloudOn?'Riconnetti':'Connetti e sincronizza';
+}
+function loadScript(src,cb){
+  var found=document.querySelector('script[data-fb="'+src+'"]');
+  if(found){ cb(true); return; }
+  var sc=document.createElement('script'); sc.src=src; sc.setAttribute('data-fb',src);
+  sc.onload=function(){ cb(true); }; sc.onerror=function(){ cb(false); };
+  document.head.appendChild(sc);
+}
+function ensureSDK(cb){
+  if(typeof firebase!=='undefined' && firebase.firestore){ cb(true); return; }
+  loadScript('https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js',function(ok1){
+    if(!ok1){ cb(false); return; }
+    loadScript('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js',function(ok2){
+      cb(ok2 && typeof firebase!=='undefined');
+    });
+  });
+}
+function parseFbConfig(raw){
+  // normalizza virgolette "intelligenti" (curve) in dritte
+  var t=raw.replace(/[\u201C\u201D]/g,'"').replace(/[\u2018\u2019]/g,"'");
+  var wanted=['apiKey','authDomain','projectId','storageBucket','messagingSenderId','appId','measurementId','databaseURL'];
+  var out={};
+  for(var i=0;i<wanted.length;i++){
+    var k=wanted[i];
+    // cerca  key : "valore"  oppure  key : 'valore'  (con o senza virgolette sulla chiave)
+    var re=new RegExp('["\\\'`]?'+k+'["\\\'`]?\\s*:\\s*["\\\'`]([^"\\\'`]*)["\\\'`]');
+    var m=t.match(re);
+    if(m) out[k]=m[1];
+  }
+  if(!out.apiKey||!out.projectId) throw new Error('config incompleta');
+  return out;
+}
+function cloudConnect(showMsg){
+  var raw=document.getElementById('fbConfig').value.trim();
+  var spaceId=document.getElementById('fbSpaceId').value.trim();
+  var chiave=document.getElementById('fbChiave').value.trim();
+  if(!raw){ toast('Incolla la configurazione Firebase'); return; }
+  if(!spaceId||!chiave){ toast('Inserisci ID spazio e chiave segreta'); return; }
+  var cfg;
+  try{ cfg=parseFbConfig(raw); }catch(e){ setCloudStatus('error','Configurazione non valida'); toast('Config Firebase non valida'); return; }
+  if(!cfg.projectId||!cfg.apiKey){ setCloudStatus('error','Config incompleta'); toast('Mancano apiKey/projectId'); return; }
+  setCloudStatus('syncing','Caricamento SDK...');
+  ensureSDK(function(ok){
+    if(!ok||typeof firebase==='undefined'){ setCloudStatus('error','SDK non disponibile (apri via http, non in anteprima)'); toast('Firebase non caricabile qui'); return; }
+    try{
+      if(fbUnsub){ fbUnsub(); fbUnsub=null; }
+      if(fbApp){ try{ fbApp.delete(); }catch(e){} fbApp=null; }
+      fbApp=firebase.initializeApp(cfg,'tracker_'+Date.now());
+      fbDb=firebase.firestore(fbApp);
+    }catch(e){ setCloudStatus('error','Errore init'); toast('Errore init Firebase'); return; }
+    saveCloudCfg({raw:raw,spaceId:spaceId,chiave:chiave});
+    var ref=fbDb.collection('trackers').doc(docIdFrom(spaceId,chiave));
+    setCloudStatus('syncing','Connessione...');
+    ref.get().then(function(snap){
+      if(snap.exists){
+        var rem=snap.data();
+        if(rem&&rem.payload) applyRemote(rem.payload);
+      } else { cloudOn=true; cloudPush(); }
+      cloudOn=true;
+      attachRealtime(ref);
+      setCloudStatus('online','Connesso e sincronizzato');
+      if(showMsg) toast('Cloud connesso');
+    }).catch(function(e){ setCloudStatus('error','Accesso negato o rete assente'); toast('Errore Firestore'); });
+  });
+}
+function attachRealtime(ref){
+  if(fbUnsub) fbUnsub();
+  fbUnsub=ref.onSnapshot(function(snap){
+    if(!snap.exists) return;
+    var rem=snap.data();
+    if(rem&&rem.payload&&rem.origin!==clientId) applyRemote(rem.payload);
+  },function(err){ setCloudStatus('error','Sync interrotta'); });
+}
+function applyRemote(payload){
+  try{
+    applyingRemote=true;
+    var d=defaultState();
+    state={settings:Object.assign({},d.settings,payload.settings||{}),categories:payload.categories||d.categories,absences:payload.absences||[],overrides:payload.overrides||{},localHolidays:payload.localHolidays||[]};
+    lsSet(STORAGE_KEY, JSON.stringify(state));
+    renderAll();
+  } finally { applyingRemote=false; }
+}
+function cloudPush(){
+  if(!fbDb) return;
+  var cfg=loadCloudCfg(); if(!cfg.spaceId) return;
+  var ref=fbDb.collection('trackers').doc(docIdFrom(cfg.spaceId,cfg.chiave));
+  setCloudStatus('syncing','Salvataggio su cloud...');
+  ref.set({payload:state,updatedAt:Date.now(),origin:clientId}).then(function(){ setCloudStatus('online','Connesso e sincronizzato'); }).catch(function(e){ setCloudStatus('error','Errore salvataggio'); });
+}
+function cloudDisconnect(){
+  if(fbUnsub){ fbUnsub(); fbUnsub=null; }
+  if(fbApp){ try{ fbApp.delete(); }catch(e){} fbApp=null; }
+  fbDb=null; cloudOn=false;
+  lsRemove(CLOUD_CFG_KEY);
+  setCloudStatus('offline','Solo locale \u2014 cloud non configurato');
+  toast('Cloud disconnesso (dati locali intatti)');
+}
+function initCloud(){
+  var cfg=loadCloudCfg();
+  if(cfg.raw) document.getElementById('fbConfig').value=cfg.raw;
+  if(cfg.spaceId) document.getElementById('fbSpaceId').value=cfg.spaceId;
+  if(cfg.chiave) document.getElementById('fbChiave').value=cfg.chiave;
+  if(cfg.raw&&cfg.spaceId&&cfg.chiave){ cloudConnect(false); }
+  else setCloudStatus('offline','Solo locale \u2014 cloud non configurato');
+}
+document.getElementById('btnCloudConnect').onclick=function(){ cloudConnect(true); };
+document.getElementById('btnCloudSync').onclick=function(){ cloudPush(); toast('Sincronizzazione forzata'); };
+document.getElementById('btnCloudDisconnect').onclick=cloudDisconnect;
+
+function isoLocal(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+// quando cambio anno con le frecce: allinea refDate a quell'anno.
+// Anno < oggi -> 31/12 di quell'anno (tutto maturato/goduto). Anno = oggi -> oggi. Anno > oggi -> 01/01.
+function syncRefFromYear(){
+  var today=new Date(); today.setHours(0,0,0,0);
+  if(currentYear<today.getFullYear()){ refDate=new Date(currentYear,11,31); }
+  else if(currentYear>today.getFullYear()){ refDate=new Date(currentYear,0,1); }
+  else { refDate=new Date(today); }
+  refDate.setHours(0,0,0,0);
+  document.getElementById('refDateInput').value=isoLocal(refDate);
+}
+function setRefDate(iso){
+  if(!iso) return;
+  refDate=parseYmd(iso); refDate.setHours(0,0,0,0);
+  currentYear=refDate.getFullYear();
+  renderAll();
+}
+document.getElementById('refDateInput').value=isoLocal(refDate);
+document.getElementById('refDateInput').onchange=function(){ setRefDate(this.value); };
+document.getElementById('refToday').onclick=function(){ var t=new Date(); t.setHours(0,0,0,0); refDate=t; currentYear=t.getFullYear(); document.getElementById('refDateInput').value=isoLocal(refDate); renderAll(); };
+applyTheme(lsGet(THEME_KEY)||'light');
+initCloud();
+renderAll();
+</script>
+
+
+</body></html>
