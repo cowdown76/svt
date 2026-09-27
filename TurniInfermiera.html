@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="it"><head><style id="qw-theme">:root {
+  --color-bg: #faf9fc !important;
+  --color-text: #131920 !important;
+  --flow-size-overview-canvas-min-height: 480px !important;
+  --color-navbar-bg: #f9f9fb !important;
+  --color-bg-chat-view: #fcfcfd !important;
+  --color-bg-secondary: #fff !important;
+  --color-bg-tertiary: #f9fafb !important;
+  --color-bg-hover: #f3f4f6 !important;
+  --color-surface: #f9fafb !important;
+  --color-surface-hover: #f3f4f6 !important;
+  --color-surface-active: #e5e7eb !important;
+  --color-border: #0000001f !important;
+  --color-border-light: #0000000f !important;
+  --color-border-strong: #d1d5db !important;
+  --background-toggle-off-default: #fff0 !important;
+  --color-primary: #4200db !important;
+  --color-primary-dark: #35009e !important;
+  --color-primary-light: #8575ff !important;
+  --color-primary-bg: #e8e6ff !important;
+  --color-primary-hover-border: #35009e !important;
+  --color-nav-icon-active: #4200db !important;
+  --color-nav-hover-border: #4200db !important;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent) !important;
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent) !important;
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent) !important;
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent) !important;
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent) !important;
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent) !important;
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent) !important;
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-focus-ring: #4200db !important;
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-sidebar-hover-solid: color-mix(in srgb, #4200db 12%, #faf9fc) !important;
+  --color-selection-copy: #3b82f64d !important;
+  --color-selection-capture: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent) !important;
+  --block-selected-outline: 1px solid #8575ff !important;
+  --block-selection-outline-offset: 2px !important;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-accent: #4200db !important;
+  --color-accent-foreground: #4200db !important;
+  --color-accent-dark: #35009e !important;
+  --color-accent-light: #e8e6ff !important;
+  --color-accent-inverse: #fff !important;
+  --color-link: #4200db !important;
+  --color-brand-ai-gradient-start: #6842ff !important;
+  --color-brand-ai-gradient-mid: #d600ba !important;
+  --color-brand-ai-gradient-end: #ff4b14 !important;
+  --color-primary-gradient-end: #e8e6ff !important;
+  --color-primary-bg-solid: #e8e6ff !important;
+  --color-user-bubble: #f3f3f7 !important;
+  --color-user-bubble-text: #131920 !important;
+  --color-text-secondary: #5e5e5e !important;
+  --color-text-tertiary: #656871 !important;
+  --color-text-muted: #9ca3af !important;
+  --color-text-on-primary: #fff !important;
+  --color-success: #00802f !important;
+  --color-success-dark: #00471e !important;
+  --color-success-light: #d9ffd6 !important;
+  --color-success-hover: #005c26 !important;
+  --color-success-bg: #e6f5eb !important;
+  --color-success-border: #b3d9bf !important;
+  --color-success-foreground: #00802f !important;
+  --color-success-dark-foreground: #00471e !important;
+  --color-success-text: #00471e !important;
+  --color-error: #db0000 !important;
+  --color-error-dark: #700000 !important;
+  --color-error-light: #ffe0e0 !important;
+  --color-error-hover: #ffe0e0 !important;
+  --color-error-bg: #fceaea !important;
+  --color-error-border: #f2cccc !important;
+  --color-error-active-border: #db0000 !important;
+  --color-error-foreground: #db0000 !important;
+  --color-error-dark-foreground: #700000 !important;
+  --color-error-inverse: #fff !important;
+  --color-error-text: #700000 !important;
+  --color-warning: #f2b100 !important;
+  --color-warning-dark: #573a00 !important;
+  --color-warning-light: #fffbbd !important;
+  --color-warning-hover: #db9200 !important;
+  --color-warning-bg: #fef7e6 !important;
+  --color-warning-border: #f9dfa3 !important;
+  --color-warning-foreground: #f2b100 !important;
+  --color-warning-dark-foreground: #573a00 !important;
+  --color-warning-inverse: #573a00 !important;
+  --color-surface-warning: #fffbbd !important;
+  --color-text-warning: #573a00 !important;
+  --color-info: #006ce0 !important;
+  --color-info-dark: #002a66 !important;
+  --color-info-light: #d1f1ff !important;
+  --color-info-hover: #003b8f !important;
+  --color-info-bg: #ebf3fc !important;
+  --color-info-border: #b3d1f0 !important;
+  --color-info-foreground: #006ce0 !important;
+  --color-info-dark-foreground: #002a66 !important;
+  --color-info-inverse: #fff !important;
+  --color-overlay: #00000080 !important;
+  --color-shadow: #00000014 !important;
+  --color-hover: #0000000d !important;
+  --color-tooltip-bg: #000000d9 !important;
+  --color-tooltip-text: #fff !important;
+  --color-voice-purple: #8575ff !important;
+  --color-voice-purple-dark: #4200db !important;
+  --color-voice-purple-light: #8575ff !important;
+  --color-voice-red: #db0000 !important;
+  --color-voice-red-dark: #700000 !important;
+  --color-voice-amber: #f2b100 !important;
+  --color-voice-purple-glow: #4200db66 !important;
+  --color-voice-red-glow: #db000066 !important;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace !important;
+  --text-2xs: .5625rem !important;
+  --text-xs: .625rem !important;
+  --text-sm: .6875rem !important;
+  --text-base: .75rem !important;
+  --text-md: .8125rem !important;
+  --text-lg: .875rem !important;
+  --text-xl: 1rem !important;
+  --text-2xl: 1.125rem !important;
+  --text-3xl: 1.25rem !important;
+  --text-4xl: 1.5rem !important;
+  --text-5xl: 2rem !important;
+  --spacing-1: calc(.25rem * 1) !important;
+  --spacing-1-5: calc(.25rem * 1.5) !important;
+  --spacing-2: calc(.25rem * 2) !important;
+  --spacing-3: calc(.25rem * 3) !important;
+  --spacing-4: calc(.25rem * 4) !important;
+  --spacing-5: calc(.25rem * 5) !important;
+  --spacing-6: calc(.25rem * 6) !important;
+  --spacing-7: calc(.25rem * 7) !important;
+  --spacing-8: calc(.25rem * 8) !important;
+  --spacing-9: calc(.25rem * 9) !important;
+  --spacing-10: calc(.25rem * 10) !important;
+  --border-radius-rounded-lg: 8px !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-card: 12px !important;
+  --radius-lg: 16px !important;
+  --radius-pill: 8px !important;
+  --shadow-sm: 0 1px 2px #0000000d !important;
+  --shadow-md: 0 4px 12px #00000014 !important;
+  --shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --color-success-bg-solid: #d9ffd6 !important;
+  --color-error-bg-solid: #ffe0e0 !important;
+  --color-error-border-solid: #ffe0e0 !important;
+  --color-warning-bg-solid: #fffbbd !important;
+  --color-warning-text: #573a00 !important;
+  --color-info-bg-solid: #d1f1ff !important;
+  --color-info-bg-solid-alt: #d1f1ff !important;
+  --color-info-text: #002a66 !important;
+  --color-info-text-alt: #002a66 !important;
+  --color-emerald: #10b981 !important;
+  --color-teal: #4ecdc4 !important;
+  --color-code-bg: #f3f3f7 !important;
+  --color-code-header-bg: #f1f3f5 !important;
+  --color-code-text: #24292e !important;
+  --color-code-border: #e1e4e8 !important;
+  --color-code-muted: #6a737d !important;
+  --color-inline-code-bg: #f3f3f7 !important;
+  --color-inline-code-text: #24292e !important;
+  --color-inline-code-border: #e1e4e8 !important;
+  --color-scrollbar-thumb: #d1d5db !important;
+  --color-scrollbar-track: transparent !important;
+  --color-graph-node-text: #333 !important;
+  --color-graph-node-text-dim: #7f8c8d !important;
+  --color-graph-edge-default: #95a5a6 !important;
+  --color-graph-edge-cross: #e67e22 !important;
+  --color-graph-edge-text: #666 !important;
+  --color-graph-edge-stroke: #fff !important;
+  --color-graph-highlight-bg: #ff6b6b !important;
+  --color-graph-highlight-border: #e74c3c !important;
+  --color-graph-search-bg: gold !important;
+  --color-graph-search-border: orange !important;
+  --color-graph-focus-border: #c0392b !important;
+  --color-graph-external-border: #95a5a6 !important;
+  --color-graph-selected-border: #4200db !important;
+  --qs-data-cat-01: #4338ca !important;
+  --qs-data-cat-02: #d97706 !important;
+  --qs-data-cat-03: #0891b2 !important;
+  --qs-data-cat-04: #8b5cf6 !important;
+  --qs-data-cat-05: #15803d !important;
+  --qs-data-cat-06: #0c4a6e !important;
+  --qs-data-cat-07: #d946ef !important;
+  --qs-data-cat-08: #65a30d !important;
+  --qs-data-cat-09: #1d4ed8 !important;
+  --qs-data-cat-10: #831843 !important;
+  --qs-data-cat-11: #c2410c !important;
+  --qs-data-cat-12: #115e59 !important;
+  --qs-data-cat-other: #737373 !important;
+  --color-graph-cat-person: #4338ca !important;
+  --color-graph-cat-module: #4338ca !important;
+  --color-graph-cat-organization: #d97706 !important;
+  --color-graph-cat-org: #d97706 !important;
+  --color-graph-cat-variable: #d97706 !important;
+  --color-graph-cat-column: #d97706 !important;
+  --color-graph-cat-project: #0891b2 !important;
+  --color-graph-cat-sheet: #0891b2 !important;
+  --color-graph-cat-url: #0891b2 !important;
+  --color-graph-cat-product: #8b5cf6 !important;
+  --color-graph-cat-class: #8b5cf6 !important;
+  --color-graph-cat-dashboard: #8b5cf6 !important;
+  --color-graph-cat-place: #15803d !important;
+  --color-graph-cat-location: #15803d !important;
+  --color-graph-cat-function: #15803d !important;
+  --color-graph-cat-event: #0c4a6e !important;
+  --color-graph-cat-date: #0c4a6e !important;
+  --color-graph-cat-service: #0c4a6e !important;
+  --color-graph-cat-creativework: #d946ef !important;
+  --color-graph-cat-doc: #d946ef !important;
+  --color-graph-cat-message: #65a30d !important;
+  --color-graph-cat-channel: #65a30d !important;
+  --color-graph-cat-email: #65a30d !important;
+  --color-graph-cat-visual: #65a30d !important;
+  --color-graph-cat-file: #1d4ed8 !important;
+  --color-graph-cat-file-aggregate: #1d4ed8 !important;
+  --color-graph-cat-code: #1d4ed8 !important;
+  --color-graph-cat-decision: #831843 !important;
+  --color-graph-cat-action: #831843 !important;
+  --color-graph-cat-observation: #831843 !important;
+  --color-graph-cat-metric: #831843 !important;
+  --color-graph-cat-topic: #c2410c !important;
+  --color-graph-cat-concept: #c2410c !important;
+  --color-graph-cat-definedterm: #c2410c !important;
+  --color-graph-cat-instruction: #c2410c !important;
+  --color-graph-cat-import: #c2410c !important;
+  --color-graph-cat-dataset: #115e59 !important;
+  --color-graph-cat-occupation: #115e59 !important;
+  --color-graph-cat-method: #115e59 !important;
+  --color-graph-cat-folder: #737373 !important;
+  --color-graph-cat-unknown: #737373 !important;
+  --color-graph-rel-contains: #bdc3c7 !important;
+  --color-graph-rel-extends: #9b59b6 !important;
+  --color-graph-rel-implements: #3498db !important;
+  --color-graph-rel-imports: #e67e22 !important;
+  --color-graph-rel-uses: #2ecc71 !important;
+  --color-graph-rel-calls: #27ae60 !important;
+  --color-graph-rel-references: #f39c12 !important;
+  --color-graph-rel-related-to: #95a5a6 !important;
+  --color-graph-rel-works-on: #e74c3c !important;
+  --color-graph-rel-owns: #1abc9c !important;
+  --color-graph-rel-depends-on: #e67e22 !important;
+  --color-graph-rel-parent-of: #bdc3c7 !important;
+  --qs-content: #fff !important;
+  --qs-main: #fff !important;
+  --qs-primary-foreground: #131920 !important;
+  --qs-secondary-foreground: #656871 !important;
+  --qs-tertiary-foreground: #9ca3af !important;
+  --qs-placeholder-foreground: #656871 !important;
+  --qs-divider: #dedee3 !important;
+  --qs-default-border: #8c8c94 !important;
+  --qs-neutral-soft: #b4b4bb !important;
+  --qs-neutral-gray-50: #f9fafb !important;
+  --qs-tertiary-background: #f9fafb !important;
+  --qs-action-hover: #f3f3f7 !important;
+  --qs-primary-default: #4200db !important;
+  --qs-primary-dark: #35009e !important;
+  --qs-primary-light: #e8e6ff !important;
+  --qs-success-default: #00802f !important;
+  --qs-error-default: #db0000 !important;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --mc-status-needs-input-bg: #fffbbd !important;
+  --mc-status-needs-input-fg: #573a00 !important;
+  --mc-status-error-bg: #ffe0e0 !important;
+  --mc-status-error-fg: #700000 !important;
+  --mc-status-running-bg: #d1f1ff !important;
+  --mc-status-running-fg: #002a66 !important;
+  --mc-badge-success-bg: #aeffa8 !important;
+  --mc-badge-success-fg: #00471e !important;
+  --mc-badge-warning-bg: #ffed4d !important;
+  --mc-badge-warning-fg: #573a00 !important;
+  --mc-schedule-tile-border: #ffe0fb !important;
+  --mc-schedule-tile-bg: color-mix(in srgb, #ffe0fb 28%, #fff) !important;
+  --safe-top: 0px !important;
+  --safe-bottom: 0px !important;
+  --safe-left: 0px !important;
+  --safe-right: 0px !important;
+  --qs-action-active: #e8e6ff !important;
+  --qs-action-disabled: #f3f3f7 !important;
+  --qs-active-border: #4200db !important;
+  --qs-application-navbar: #4200db !important;
+  --qs-application-navbar-dark: #35009e !important;
+  --qs-application-navbar-foreground: #fff !important;
+  --qs-application-navbar-light: #e8e6ff !important;
+  --qs-automation-dark: #660052 !important;
+  --qs-automation-default: #d600ba !important;
+  --qs-automation-light: #ffe0fb !important;
+  --qs-automation-medium: #b3008f !important;
+  --qs-automation-soft: #ff94f1 !important;
+  --qs-avatar-blue-bg: #d1f1ff !important;
+  --qs-avatar-blue-fg: #002a66 !important;
+  --qs-avatar-fuchsia-bg: #fce6ff !important;
+  --qs-avatar-fuchsia-fg: #590066 !important;
+  --qs-avatar-green-bg: #d9ffd6 !important;
+  --qs-avatar-green-fg: #00471e !important;
+  --qs-avatar-neutral-bg: #dedee3 !important;
+  --qs-avatar-neutral-fg: #131920 !important;
+  --qs-avatar-orange-bg: #ffe0d6 !important;
+  --qs-avatar-orange-fg: #661800 !important;
+  --qs-avatar-pink-bg: #ffe0fb !important;
+  --qs-avatar-pink-fg: #660052 !important;
+  --qs-avatar-primary-bg: #e8e6ff !important;
+  --qs-avatar-primary-fg: #35009e !important;
+  --qs-avatar-red-bg: #ffe0e0 !important;
+  --qs-avatar-red-fg: #700000 !important;
+  --qs-avatar-violet-bg: #f2e5ff !important;
+  --qs-avatar-violet-fg: #45008a !important;
+  --qs-avatar-yellow-bg: #fffbbd !important;
+  --qs-avatar-yellow-fg: #573a00 !important;
+  --qs-brand: #fff !important;
+  --qs-brand-foreground: #131920 !important;
+  --qs-brand-navbar: #131920 !important;
+  --qs-brand-navbar-dark: #000 !important;
+  --qs-brand-navbar-foreground: #fff !important;
+  --qs-brand-navbar-light: #dedee3 !important;
+  --qs-coachmark: #006ce0 !important;
+  --qs-connection-dark: #661800 !important;
+  --qs-connection-default: #db3300 !important;
+  --qs-connection-light: #ffe0d6 !important;
+  --qs-connection-soft: #ff997a !important;
+  --qs-content-inverse: #333843 !important;
+  --qs-content-inverse-active: #131920 !important;
+  --qs-contrast-foreground: #131920 !important;
+  --qs-default-badge: #b4b4bb !important;
+  --qs-default-badge-dot: #656871 !important;
+  --qs-dimension: #4200db !important;
+  --qs-dimension-experimental: #4200db !important;
+  --qs-dimension-experimental-foreground: #4200db !important;
+  --qs-dimension-foreground: #fff !important;
+  --qs-disabled: #8c8c94 !important;
+  --qs-disabled-border: #dedee3 !important;
+  --qs-disabled-foreground: #b4b4bb !important;
+  --qs-divider-light: #f3f3f7 !important;
+  --qs-error-active-border: #db0000 !important;
+  --qs-error-border: #ffe0e0 !important;
+  --qs-error-dark: #700000 !important;
+  --qs-error-foreground: #db0000 !important;
+  --qs-error-inverse: #fff !important;
+  --qs-error-light: #ffe0e0 !important;
+  --qs-error-medium: #900 !important;
+  --qs-error-soft: #ff9e9e !important;
+  --qs-focus-offset: 1px !important;
+  --qs-font-base-letter-spacing: .15px !important;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-grid-gap: 16px !important;
+  --qs-grid-gap-xl: 24px !important;
+  --qs-hero-banner-button-hover: color-mix(in srgb, #fff, transparent 60%) !important;
+  --qs-hover-border: #333843 !important;
+  --qs-info-dark: #002a66 !important;
+  --qs-info-default: #006ce0 !important;
+  --qs-info-inverse: #fff !important;
+  --qs-info-light: #d1f1ff !important;
+  --qs-info-medium: #003b8f !important;
+  --qs-info-soft: #75cfff !important;
+  --qs-insight-dark: #590066 !important;
+  --qs-insight-default: #a000b8 !important;
+  --qs-insight-light: #fce6ff !important;
+  --qs-insight-soft: #f299ff !important;
+  --qs-main-foreground: #131920 !important;
+  --qs-main-secondary-foreground: #656871 !important;
+  --qs-measure: #00802f !important;
+  --qs-measure-experimental: #f2b100 !important;
+  --qs-measure-experimental-foreground: #f2b100 !important;
+  --qs-measure-foreground: #fff !important;
+  --qs-neutral-black: #000 !important;
+  --qs-neutral-dark: #333843 !important;
+  --qs-neutral-deep: #656871 !important;
+  --qs-neutral-default: #dedee3 !important;
+  --qs-neutral-light: #f3f3f7 !important;
+  --qs-neutral-lightest: #f9f9fb !important;
+  --qs-neutral-medium: #8c8c94 !important;
+  --qs-neutral-strong: #131920 !important;
+  --qs-neutral-white: #fff !important;
+  --qs-overlay: color-mix(in srgb, #131920, transparent 50%) !important;
+  --qs-primary-inverse: #fff !important;
+  --qs-primary-inverse-foreground: #fff !important;
+  --qs-primary-medium: #8575ff !important;
+  --qs-primary-soft: #b2a8ff !important;
+  --qs-secondary: #dedee3 !important;
+  --qs-secondary-dark: #b4b4bb !important;
+  --qs-secondary-light: #f3f3f7 !important;
+  --qs-spice: #ff9800 !important;
+  --qs-success-dark: #00471e !important;
+  --qs-success-inverse: #fff !important;
+  --qs-success-light: #d9ffd6 !important;
+  --qs-success-medium: #005c26 !important;
+  --qs-success-soft: #aeffa8 !important;
+  --qs-tag-default: #dedee3 !important;
+  --qs-tag-soft-border: #b4b4bb !important;
+  --qs-toggle-tile-lg: calc(.25rem * 15) !important;
+  --qs-toggle-tile-md: calc(.25rem * 12) !important;
+  --qs-toggle-tile-sm: calc(.25rem * 8) !important;
+  --qs-transparent: transparent !important;
+  --qs-visualization-dark: #45008a !important;
+  --qs-visualization-default: #7300e5 !important;
+  --qs-visualization-light: #f2e5ff !important;
+  --qs-visualization-soft: #d4a8ff !important;
+  --qs-warning-dark: #573a00 !important;
+  --qs-warning-default: #f2b100 !important;
+  --qs-warning-experimental: #f2b100 !important;
+  --qs-warning-experimental-light: #fffbbd !important;
+  --qs-warning-experimental-light-foreground: #fffbbd !important;
+  --qs-warning-inverse: #573a00 !important;
+  --qs-warning-light: #fffbbd !important;
+  --qs-warning-medium: #db9200 !important;
+  --qs-warning-soft: #ffed4d !important;
+  --qs-width-modal-lg: 1136px !important;
+  --qs-width-modal-md: 600px !important;
+  --qs-width-modal-sm: 384px !important;
+  --qs-duration-reorder: .125s !important;
+  --qs-ease-reorder: ease-in-out !important;
+  --react-pdf-text-layer: 1 !important;
+  --highlight-bg-color: #b400aa !important;
+  --highlight-selected-bg-color: #006400 !important;
+  --react-pdf-annotation-layer: 1 !important;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>") !important;
+  --input-focus-border-color: Highlight !important;
+  --input-focus-outline: 1px solid Canvas !important;
+  --input-unfocused-border-color: transparent !important;
+  --input-disabled-border-color: transparent !important;
+  --input-hover-border-color: black !important;
+  --link-outline: none !important;
+}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracker Turni Infermiera</title>
+<style>
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --text2: #555;
+  --border: #e0e0e0;
+  --accent: #4a6cf7;
+  --accent-hover: #3b5de7;
+  --header-bg: #4a6cf7;
+  --header-text: #fff;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+[data-theme="dark"] {
+  --bg: #121220;
+  --card: #1e1e32;
+  --text: #e0e0e0;
+  --text2: #aaa;
+  --border: #333;
+  --header-bg: #2a2a4a;
+  --input-bg: #2a2a4a;
+  --input-border: #444;
+  --shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+.header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.header h1 { font-size: 20px; font-weight: 700; }
+.header-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-primary { background: #fff; color: var(--accent); }
+.btn-primary:hover { background: #f0f0f0; }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-danger { background: #F44336; color: #fff; }
+.btn-danger:hover { background: #d32f2f; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { background: var(--bg); }
+
+.tabs {
+  display: flex;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text2);
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.tab:hover { color: var(--accent); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.content { padding: 16px; max-width: 1200px; margin: 0 auto; }
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+}
+.card h2 { font-size: 16px; margin-bottom: 12px; color: var(--text); }
+.card h3 { font-size: 14px; margin-bottom: 8px; color: var(--text2); }
+
+.nav-month {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.nav-month button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text);
+}
+.nav-month span { font-size: 18px; font-weight: 600; }
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  padding: 8px 4px;
+}
+.cal-day {
+  min-height: 70px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  background: var(--card);
+}
+.cal-day:hover { box-shadow: 0 0 0 2px var(--accent); }
+.cal-day.empty { background: transparent; border-color: transparent; cursor: default; }
+.cal-day.empty:hover { box-shadow: none; }
+.cal-day .day-num { font-size: 12px; font-weight: 600; color: var(--text2); }
+.cal-day .shift-badge {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-top: 2px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cal-day.today { border-color: var(--accent); border-width: 2px; }
+.cal-day.sunday .day-num { color: #F44336; }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+.summary-item {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+.summary-item .s-label { font-size: 11px; opacity: 0.9; }
+.summary-item .s-count { font-size: 22px; font-weight: 700; font-family: monospace; }
+.summary-item .s-hours { font-size: 12px; opacity: 0.85; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-family: inherit;
+}
+textarea { resize: vertical; min-height: 60px; }
+label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 4px; color: var(--text2); }
+.form-group { margin-bottom: 12px; }
+.form-row { display: flex; gap: 12px; }
+.form-row > * { flex: 1; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.modal h2 { font-size: 18px; margin-bottom: 16px; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+
+.shift-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.shift-list-item:last-child { border-bottom: none; }
+.shift-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.cat-color {
+  width: 24px; height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.cat-info { flex: 1; }
+.cat-name { font-weight: 600; font-size: 14px; }
+.cat-hours { font-size: 12px; color: var(--text2); }
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.toggle-switch {
+  width: 44px; height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle-switch.on { background: var(--accent); }
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px; left: 2px;
+  transition: transform 0.2s;
+}
+.toggle-switch.on::after { transform: translateX(20px); }
+
+.pw-field { position: relative; }
+.pw-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text2);
+}
+
+.status-bar {
+  padding: 8px 16px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--text2);
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+.status-bar.connected { color: #4CAF50; }
+.status-bar.error { color: #F44336; }
+
+.hidden { display: none !important; }
+
+.year-table { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+.year-table th { text-align:center; padding:6px; border-bottom:1px solid var(--border); font-size:11px; }
+.year-table td { text-align:center; padding:6px; border-bottom:1px solid var(--border); }
+.year-table th:first-child, .year-table td:first-child { text-align:left; }
+
+@media (max-width: 600px) {
+  .header { padding: 12px; }
+  .header h1 { font-size: 16px; }
+  .content { padding: 10px; }
+  .cal-day { min-height: 55px; }
+  .form-row { flex-direction: column; gap: 8px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .year-table { font-size: 11px; }
+  .year-table th, .year-table td { padding: 4px 2px; }
+}
+</style>
+</head>
+<body>
+<h1 style="position:absolute;left:-9999px;">Tracker Turni Infermiera</h1>
+
+<div id="app">
+  <div class="header">
+    <h1 style="color:#fff;">🏥 Tracker Turni</h1>
+    <div class="header-actions">
+      <button class="btn btn-primary" onclick="openAddShift()">+ Turno</button>
+      <button class="btn btn-primary" onclick="importCSV()">📄 CSV</button>
+      <button class="btn btn-primary" onclick="toggleTheme()" id="themeBtn">🌙</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('calendario')">📅 Calendario</div>
+    <div class="tab" onclick="showTab('elenco')">📋 Elenco</div>
+    <div class="tab" onclick="showTab('categorie')">🏷️ Categorie</div>
+    <div class="tab" onclick="showTab('impostazioni')">⚙️ Impostazioni</div>
+  </div>
+
+  <!-- CALENDARIO + RIEPILOGO -->
+  <div id="tab-calendario" class="content tab-content">
+    <div class="nav-month">
+      <button onclick="changeMonth(-1)">◀</button>
+      <span id="monthLabel"></span>
+      <button onclick="changeMonth(1)">▶</button>
+      <button class="btn btn-sm btn-accent" onclick="goToday()">Oggi</button>
+    </div>
+    <div class="calendar-grid" id="calGrid"></div>
+
+    <!-- Riepilogo Mensile sotto il calendario -->
+    <div class="card" style="margin-top:16px;">
+      <h2 id="summaryTitle">📊 Riepilogo Mensile</h2>
+      <div class="summary-grid" id="summaryGrid"></div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:16px;font-weight:600;">
+        Totale Ore Mese: <span id="totalHours" style="color:var(--accent);font-family:monospace;">0</span>
+      </div>
+    </div>
+
+    <!-- Riepilogo Annuale -->
+    <div class="card">
+      <h2>📈 Riepilogo Annuale <span id="summaryYear"></span></h2>
+      <div id="yearSummary"></div>
+    </div>
+  </div>
+
+  <!-- ELENCO -->
+  <div id="tab-elenco" class="content tab-content hidden">
+    <div class="card">
+      <h2>Elenco Turni — <span id="listMonth"></span></h2>
+      <div id="shiftList"></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIE -->
+  <div id="tab-categorie" class="content tab-content hidden">
+    <div class="card">
+      <h2>Categorie Turni</h2>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">Gestisci le tipologie di turno. Puoi aggiungerne di nuove o rimuovere quelle esistenti.</p>
+      <div id="catList"></div>
+      <button class="btn btn-accent" onclick="openAddCategory()" style="margin-top:12px;">+ Nuova Categoria</button>
+    </div>
+  </div>
+
+  <!-- IMPOSTAZIONI -->
+  <div id="tab-impostazioni" class="content tab-content hidden">
+    <div class="card">
+      <h2>🔥 Sincronizzazione Firebase</h2>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">Sincronizza i turni tra dispositivi. Se non configuri Firebase, l'app funziona in locale.</p>
+      <div id="firebaseStatus" style="padding:8px;border-radius:6px;margin-bottom:12px;font-size:13px;background:#fff3e0;color:#e65100;">
+        ⚡ Solo locale — cloud non configurato
+      </div>
+      <div class="form-group" id="fbConfigGroup" style="display:none;">
+        <label>Configurazione Firebase (JSON)</label>
+        <textarea id="fbConfig" rows="5" placeholder="{&quot;apiKey&quot;:&quot;...&quot;,&quot;authDomain&quot;:&quot;...&quot;,&quot;projectId&quot;:&quot;...&quot;,&quot;storageBucket&quot;:&quot;...&quot;,&quot;messagingSenderId&quot;:&quot;...&quot;,&quot;appId&quot;:&quot;...&quot;}"></textarea>
+      </div>
+      <div class="form-group">
+        <label>ID Spazio Dati (utente)</label>
+        <input type="text" id="fbUserId" placeholder="es. maria-turni">
+      </div>
+      <div class="form-group">
+        <label>Chiave Segreta</label>
+        <div class="pw-field">
+          <input type="password" id="fbSecret" placeholder="Stessa su tutti i dispositivi">
+          <button class="pw-toggle" onclick="togglePw('fbSecret', this)">👁️</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-accent" onclick="connectFirebase()">🔗 Connetti</button>
+        <button class="btn btn-outline" onclick="syncFirebase()">🔄 Forza Sync</button>
+        <button class="btn btn-danger" onclick="disconnectFirebase()">Disconnetti</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💾 Backup Locale</h2>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">Esporta o importa un backup completo dei dati.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn btn-accent" onclick="exportBackup()">📥 Esporta Backup</button>
+        <button class="btn btn-outline" onclick="importBackup()">📤 Importa Backup</button>
+        <button class="btn btn-danger" onclick="clearAllData()">🗑️ Cancella Dati</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📄 Formato CSV per Import</h2>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:8px;">Il file CSV deve avere questo formato (separatore: virgola):</p>
+      <pre style="background:var(--bg);padding:12px;border-radius:6px;font-size:12px;overflow-x:auto;color:var(--text);">data,turno,nota
+2026-01-15,Mattina,Reparto A
+2026-01-16,Pomeriggio,
+2026-01-17,Notte,Sostituzione
+2026-01-18,Ferie,
+2026-01-19,Malattia,Certificato n.123
+2026-01-20,Permesso Aggiornamento,Corso ECM
+2026-01-21,Congedo,</pre>
+      <p style="font-size:12px;color:var(--text2);margin-top:8px;">Il campo "turno" deve corrispondere al nome esatto della categoria. Il campo "nota" è opzionale.</p>
+      <button class="btn btn-sm btn-outline" onclick="downloadCSVTemplate()" style="margin-top:8px;">⬇️ Scarica Template CSV</button>
+    </div>
+
+    <div class="card">
+      <h2>🎨 Tema</h2>
+      <div class="toggle-row">
+        <span>Modalità scura</span>
+        <div class="toggle-switch" id="darkToggle" onclick="toggleTheme()"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL AGGIUNGI/MODIFICA TURNO -->
+<div class="modal-overlay" id="shiftModal">
+  <div class="modal">
+    <h2 id="shiftModalTitle">Aggiungi Turno</h2>
+    <div class="form-group">
+      <label>Data</label>
+      <input type="date" id="shiftDate">
+    </div>
+    <div class="form-group">
+      <label>Tipo Turno</label>
+      <select id="shiftType"></select>
+    </div>
+    <div class="form-group">
+      <label>Nota (opzionale)</label>
+      <input type="text" id="shiftNote" placeholder="Es. Reparto, sostituzione...">
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-danger hidden" id="deleteShiftBtn" onclick="deleteShift()">Elimina</button>
+      <button class="btn btn-outline" onclick="closeModal('shiftModal')">Annulla</button>
+      <button class="btn btn-accent" onclick="saveShift()">Salva</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CATEGORIA -->
+<div class="modal-overlay" id="catModal">
+  <div class="modal">
+    <h2 id="catModalTitle">Nuova Categoria</h2>
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" id="catName" placeholder="Es. Straordinario">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Colore</label>
+        <input type="color" id="catColor" value="#FF5722" style="height:40px;padding:2px;">
+      </div>
+      <div class="form-group">
+        <label>Ore per turno</label>
+        <input type="number" id="catHours" value="8" min="0" step="0.5">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Orario (opzionale)</label>
+      <div class="form-row">
+        <input type="time" id="catStart" placeholder="Inizio">
+        <input type="time" id="catEnd" placeholder="Fine">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-danger hidden" id="deleteCatBtn" onclick="deleteCategory()">Elimina</button>
+      <button class="btn btn-outline" onclick="closeModal('catModal')">Annulla</button>
+      <button class="btn btn-accent" onclick="saveCategory()">Salva</button>
+    </div>
+  </div>
+</div>
+
+<!-- HIDDEN FILE INPUTS -->
+<input type="file" id="csvInput" accept=".csv" class="hidden">
+<input type="file" id="backupInput" accept=".json" class="hidden">
+
+<div class="status-bar" id="statusBar">Funzionamento locale</div>
+
+<script>
+// ===== GLOBAL ERROR GUARD (prevents sandboxed preview from surfacing benign load errors) =====
+window.addEventListener('error', function(e){ try{ console.warn('handled error:', e && e.message); }catch(_){}; return true; });
+window.addEventListener('unhandledrejection', function(e){ try{ console.warn('handled rejection:', e && e.reason); }catch(_){}; if(e && e.preventDefault) e.preventDefault(); });
+// ===== DATA =====
+// Safe localStorage wrapper (some sandboxed preview iframes block storage access)
+var LS = {
+  getItem: function(k){ try { return window.localStorage.getItem(k); } catch(e){ return (LS._m && LS._m[k]) || null; } },
+  setItem: function(k,v){ try { window.localStorage.setItem(k,v); } catch(e){ LS._m = LS._m || {}; LS._m[k]=v; } },
+  removeItem: function(k){ try { window.localStorage.removeItem(k); } catch(e){ if(LS._m) delete LS._m[k]; } },
+  _m: {}
+};
+// Configurazione Firebase predefinita (precompilata all'avvio; utente e chiave si inseriscono a mano)
+var DEFAULT_FB_CONFIG = '{\n' +
+  '  "apiKey": "AIzaSyAZenJZEcR9NcYxkOw91ouM658KFvUkaHs",\n' +
+  '  "authDomain": "tracker-assenze-svt.firebaseapp.com",\n' +
+  '  "projectId": "tracker-assenze-svt",\n' +
+  '  "storageBucket": "tracker-assenze-svt.firebasestorage.app",\n' +
+  '  "messagingSenderId": "973118167909",\n' +
+  '  "appId": "1:973118167909:web:248877eb4900e065d95f8c"\n' +
+  '}';
+
+const MONTHS = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+const DAYS = ['Lun','Mar','Mer','Gio','Ven','Sab','Dom'];
+
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+let editingShiftDate = null;
+let editingCatId = null;
+
+const DEFAULT_CATEGORIES = [
+  { id: 'mattina', name: 'Mattina', color: '#2196F3', hours: 7, start: '07:00', end: '14:00' },
+  { id: 'pomeriggio', name: 'Pomeriggio', color: '#FF9800', hours: 7, start: '14:00', end: '21:00' },
+  { id: 'notte', name: 'Notte', color: '#7C4DFF', hours: 10, start: '21:00', end: '07:00' },
+  { id: 'ferie', name: 'Ferie', color: '#4CAF50', hours: 8, start: '', end: '' },
+  { id: 'malattia', name: 'Malattia', color: '#F44336', hours: 8, start: '', end: '' },
+  { id: 'permesso_agg', name: 'Permesso Aggiornamento', color: '#00BCD4', hours: 8, start: '', end: '' },
+  { id: 'congedo', name: 'Congedo', color: '#E91E63', hours: 8, start: '', end: '' },
+  { id: 'riposo', name: 'Riposo', color: '#9E9E9E', hours: 0, start: '', end: '' }
+];
+
+function loadData() {
+  const d = LS.getItem('turni_data');
+  return d ? JSON.parse(d) : {};
+}
+function saveData(data) {
+  LS.setItem('turni_data', JSON.stringify(data));
+  scheduleSync();
+}
+function saveDataNoSync(data) {
+  LS.setItem('turni_data', JSON.stringify(data));
+}
+function loadCategories() {
+  const c = LS.getItem('turni_categories');
+  return c ? JSON.parse(c) : JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+}
+function saveCategories(cats) {
+  LS.setItem('turni_categories', JSON.stringify(cats));
+  scheduleSync();
+}
+function loadFirebaseConfig() {
+  const c = LS.getItem('turni_fb_config');
+  return c ? JSON.parse(c) : null;
+}
+function saveFirebaseConfig(cfg) {
+  LS.setItem('turni_fb_config', JSON.stringify(cfg));
+}
+
+// ===== THEME =====
+function initTheme() {
+  const t = LS.getItem('turni_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', t);
+  updateThemeUI(t);
+}
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  LS.setItem('turni_theme', next);
+  updateThemeUI(next);
+}
+function updateThemeUI(t) {
+  document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️' : '🌙';
+  const dt = document.getElementById('darkToggle');
+  if (dt) { t === 'dark' ? dt.classList.add('on') : dt.classList.remove('on'); }
+}
+
+// ===== TABS =====
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.add('hidden'); });
+  document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.remove('hidden');
+  var tabs = document.querySelectorAll('.tab');
+  var map = { calendario: 0, elenco: 1, categorie: 2, impostazioni: 3 };
+  if (map[name] !== undefined) tabs[map[name]].classList.add('active');
+  if (name === 'calendario') { renderCalendar(); renderSummary(); }
+  if (name === 'elenco') renderList();
+  if (name === 'categorie') renderCategories();
+}
+
+// ===== CALENDAR =====
+function renderCalendar() {
+  var grid = document.getElementById('calGrid');
+  var data = loadData();
+  var cats = loadCategories();
+  var today = new Date();
+
+  document.getElementById('monthLabel').textContent = MONTHS[currentMonth] + ' ' + currentYear;
+
+  var html = '';
+  for (var i = 0; i < DAYS.length; i++) {
+    html += '<div class="cal-header">' + DAYS[i] + '</div>';
+  }
+
+  var firstDay = new Date(currentYear, currentMonth, 1);
+  var startDay = firstDay.getDay();
+  startDay = startDay === 0 ? 6 : startDay - 1;
+
+  var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  for (var i = 0; i < startDay; i++) {
+    html += '<div class="cal-day empty"></div>';
+  }
+
+  for (var d = 1; d <= daysInMonth; d++) {
+    var dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+    var isToday = today.getFullYear() === currentYear && today.getMonth() === currentMonth && today.getDate() === d;
+    var dayOfWeek = new Date(currentYear, currentMonth, d).getDay();
+    var isSunday = dayOfWeek === 0;
+
+    var classes = 'cal-day';
+    if (isToday) classes += ' today';
+    if (isSunday) classes += ' sunday';
+
+    var badge = '';
+    if (data[dateStr]) {
+      var shift = data[dateStr];
+      var cat = cats.find(function(c) { return c.id === shift.catId || c.name === shift.catId; });
+      if (cat) {
+        badge = '<span class="shift-badge" style="background:' + cat.color + ';">' + cat.name + '</span>';
+      }
+    }
+
+    html += '<div class="' + classes + '" onclick="openEditShift(\'' + dateStr + '\')">';
+    html += '<span class="day-num">' + d + '</span>';
+    html += badge;
+    html += '</div>';
+  }
+
+  grid.innerHTML = html;
+}
+
+function changeMonth(delta) {
+  currentMonth += delta;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+  renderCalendar();
+  renderSummary();
+}
+function goToday() {
+  currentMonth = new Date().getMonth();
+  currentYear = new Date().getFullYear();
+  renderCalendar();
+  renderSummary();
+}
+
+// ===== SHIFT MODAL =====
+function openAddShift(dateStr) {
+  editingShiftDate = null;
+  document.getElementById('shiftModalTitle').textContent = 'Aggiungi Turno';
+  document.getElementById('shiftDate').value = dateStr || new Date().toISOString().split('T')[0];
+  document.getElementById('shiftNote').value = '';
+  document.getElementById('deleteShiftBtn').classList.add('hidden');
+  populateShiftTypes();
+  document.getElementById('shiftModal').classList.add('show');
+}
+function openEditShift(dateStr) {
+  var data = loadData();
+  editingShiftDate = dateStr;
+  document.getElementById('shiftDate').value = dateStr;
+  populateShiftTypes();
+
+  if (data[dateStr]) {
+    document.getElementById('shiftModalTitle').textContent = 'Modifica Turno';
+    var shift = data[dateStr];
+    document.getElementById('shiftType').value = shift.catId;
+    document.getElementById('shiftNote').value = shift.note || '';
+    document.getElementById('deleteShiftBtn').classList.remove('hidden');
+  } else {
+    document.getElementById('shiftModalTitle').textContent = 'Aggiungi Turno';
+    document.getElementById('shiftNote').value = '';
+    document.getElementById('deleteShiftBtn').classList.add('hidden');
+  }
+  document.getElementById('shiftModal').classList.add('show');
+}
+function populateShiftTypes() {
+  var sel = document.getElementById('shiftType');
+  var cats = loadCategories();
+  var html = '';
+  for (var i = 0; i < cats.length; i++) {
+    html += '<option value="' + cats[i].id + '">' + cats[i].name + ' (' + cats[i].hours + 'h)</option>';
+  }
+  sel.innerHTML = html;
+}
+function saveShift() {
+  var date = document.getElementById('shiftDate').value;
+  var catId = document.getElementById('shiftType').value;
+  var note = document.getElementById('shiftNote').value.trim();
+  if (!date || !catId) return;
+
+  var data = loadData();
+  data[date] = { catId: catId, note: note, ts: Date.now() };
+  saveData(data);
+  closeModal('shiftModal');
+  renderCalendar();
+  renderSummary();
+}
+function deleteShift() {
+  if (!editingShiftDate) return;
+  if (!confirm('Eliminare questo turno?')) return;
+  var data = loadData();
+  delete data[editingShiftDate];
+  saveData(data);
+  closeModal('shiftModal');
+  renderCalendar();
+  renderSummary();
+}
+
+// ===== SUMMARY =====
+function renderSummary() {
+  var data = loadData();
+  var cats = loadCategories();
+  var grid = document.getElementById('summaryGrid');
+
+  document.getElementById('summaryTitle').textContent = '📊 Riepilogo — ' + MONTHS[currentMonth] + ' ' + currentYear;
+  document.getElementById('summaryYear').textContent = currentYear;
+
+  var counts = {};
+  for (var i = 0; i < cats.length; i++) {
+    counts[cats[i].id] = { count: 0, hours: 0 };
+  }
+
+  var totalHours = 0;
+  var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  for (var d = 1; d <= daysInMonth; d++) {
+    var dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+    if (data[dateStr]) {
+      var catId = data[dateStr].catId;
+      var cat = cats.find(function(c) { return c.id === catId || c.name === catId; });
+      if (cat) {
+        if (!counts[cat.id]) counts[cat.id] = { count: 0, hours: 0 };
+        counts[cat.id].count++;
+        counts[cat.id].hours += cat.hours;
+        totalHours += cat.hours;
+      }
+    }
+  }
+
+  var html = '';
+  for (var i = 0; i < cats.length; i++) {
+    var c = cats[i];
+    if (counts[c.id] && counts[c.id].count > 0) {
+      html += '<div class="summary-item" style="background:' + c.color + ';">';
+      html += '<div class="s-label">' + c.name + '</div>';
+      html += '<div class="s-count">' + counts[c.id].count + '</div>';
+      html += '<div class="s-hours">' + counts[c.id].hours + ' ore</div>';
+      html += '</div>';
+    }
+  }
+  if (!html) html = '<p style="color:var(--text2);grid-column:1/-1;">Nessun turno registrato questo mese.</p>';
+  grid.innerHTML = html;
+  document.getElementById('totalHours').textContent = totalHours + ' ore';
+
+  // Year summary table
+  var yearHtml = '<table class="year-table">';
+  yearHtml += '<tr><th style="text-align:left;">Mese</th>';
+  for (var i = 0; i < cats.length; i++) {
+    yearHtml += '<th style="color:' + cats[i].color + ';">' + cats[i].name.substring(0, 4) + '</th>';
+  }
+  yearHtml += '<th style="font-weight:700;">Tot</th></tr>';
+
+  for (var m = 0; m < 12; m++) {
+    var dim = new Date(currentYear, m + 1, 0).getDate();
+    var mc = {};
+    for (var j = 0; j < cats.length; j++) { mc[cats[j].id] = 0; }
+    var mt = 0;
+    for (var d = 1; d <= dim; d++) {
+      var ds = currentYear + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      if (data[ds]) {
+        var cat = cats.find(function(c) { return c.id === data[ds].catId || c.name === data[ds].catId; });
+        if (cat) { mc[cat.id] = (mc[cat.id] || 0) + cat.hours; mt += cat.hours; }
+      }
+    }
+    var isCurrent = m === currentMonth;
+    yearHtml += '<tr style="' + (isCurrent ? 'background:var(--bg);font-weight:600;' : '') + '">';
+    yearHtml += '<td style="text-align:left;">' + MONTHS[m].substring(0, 3) + '</td>';
+    for (var j = 0; j < cats.length; j++) {
+      yearHtml += '<td>' + (mc[cats[j].id] || '-') + '</td>';
+    }
+    yearHtml += '<td style="font-weight:700;">' + (mt || '-') + '</td>';
+    yearHtml += '</tr>';
+  }
+  yearHtml += '</table>';
+  document.getElementById('yearSummary').innerHTML = yearHtml;
+}
+
+// ===== LIST =====
+function renderList() {
+  var data = loadData();
+  var cats = loadCategories();
+  document.getElementById('listMonth').textContent = MONTHS[currentMonth] + ' ' + currentYear;
+
+  var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  var html = '';
+  for (var d = 1; d <= daysInMonth; d++) {
+    var dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+    if (data[dateStr]) {
+      var shift = data[dateStr];
+      var cat = cats.find(function(c) { return c.id === shift.catId || c.name === shift.catId; });
+      if (cat) {
+        var dow = new Date(currentYear, currentMonth, d).getDay();
+        var dayName = DAYS[dow === 0 ? 6 : dow - 1];
+        html += '<div class="shift-list-item" onclick="openEditShift(\'' + dateStr + '\')">';
+        html += '<div class="shift-dot" style="background:' + cat.color + ';"></div>';
+        html += '<div style="flex:1;">';
+        html += '<strong>' + d + ' ' + MONTHS[currentMonth].substring(0, 3) + '</strong> <span style="color:var(--text2);font-size:12px;">(' + dayName + ')</span>';
+        html += '<div style="font-size:13px;color:' + cat.color + ';">' + cat.name;
+        if (cat.start && cat.end) html += ' &middot; ' + cat.start + '-' + cat.end;
+        html += ' &middot; ' + cat.hours + 'h</div>';
+        if (shift.note) html += '<div style="font-size:12px;color:var(--text2);">📝 ' + shift.note + '</div>';
+        html += '</div></div>';
+      }
+    }
+  }
+  if (!html) html = '<p style="color:var(--text2);padding:20px;text-align:center;">Nessun turno registrato questo mese.</p>';
+  document.getElementById('shiftList').innerHTML = html;
+}
+
+// ===== CATEGORIES =====
+function renderCategories() {
+  var cats = loadCategories();
+  var html = '';
+  for (var i = 0; i < cats.length; i++) {
+    var c = cats[i];
+    html += '<div class="cat-item">';
+    html += '<div class="cat-color" style="background:' + c.color + ';"></div>';
+    html += '<div class="cat-info">';
+    html += '<div class="cat-name">' + c.name + '</div>';
+    html += '<div class="cat-hours">' + c.hours + ' ore';
+    if (c.start && c.end) html += ' &middot; ' + c.start + ' - ' + c.end;
+    html += '</div></div>';
+    html += '<button class="btn btn-sm btn-outline" onclick="openEditCategory(\'' + c.id + '\')">✏️</button>';
+    html += '</div>';
+  }
+  document.getElementById('catList').innerHTML = html;
+}
+function openAddCategory() {
+  editingCatId = null;
+  document.getElementById('catModalTitle').textContent = 'Nuova Categoria';
+  document.getElementById('catName').value = '';
+  document.getElementById('catColor').value = '#FF5722';
+  document.getElementById('catHours').value = '8';
+  document.getElementById('catStart').value = '';
+  document.getElementById('catEnd').value = '';
+  document.getElementById('deleteCatBtn').classList.add('hidden');
+  document.getElementById('catModal').classList.add('show');
+}
+function openEditCategory(id) {
+  var cats = loadCategories();
+  var cat = cats.find(function(c) { return c.id === id; });
+  if (!cat) return;
+  editingCatId = id;
+  document.getElementById('catModalTitle').textContent = 'Modifica Categoria';
+  document.getElementById('catName').value = cat.name;
+  document.getElementById('catColor').value = cat.color;
+  document.getElementById('catHours').value = cat.hours;
+  document.getElementById('catStart').value = cat.start || '';
+  document.getElementById('catEnd').value = cat.end || '';
+  document.getElementById('deleteCatBtn').classList.remove('hidden');
+  document.getElementById('catModal').classList.add('show');
+}
+function saveCategory() {
+  var name = document.getElementById('catName').value.trim();
+  if (!name) return alert('Inserisci un nome.');
+  var color = document.getElementById('catColor').value;
+  var hours = parseFloat(document.getElementById('catHours').value) || 0;
+  var start = document.getElementById('catStart').value;
+  var end = document.getElementById('catEnd').value;
+
+  var cats = loadCategories();
+  if (editingCatId) {
+    var idx = cats.findIndex(function(c) { return c.id === editingCatId; });
+    if (idx >= 0) {
+      cats[idx].name = name;
+      cats[idx].color = color;
+      cats[idx].hours = hours;
+      cats[idx].start = start;
+      cats[idx].end = end;
+    }
+  } else {
+    var id = name.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Date.now();
+    cats.push({ id: id, name: name, color: color, hours: hours, start: start, end: end });
+  }
+  saveCategories(cats);
+  closeModal('catModal');
+  renderCategories();
+  renderCalendar();
+  renderSummary();
+}
+function deleteCategory() {
+  if (!editingCatId) return;
+  if (!confirm('Eliminare questa categoria? I turni associati resteranno ma senza categoria.')) return;
+  var cats = loadCategories().filter(function(c) { return c.id !== editingCatId; });
+  saveCategories(cats);
+  closeModal('catModal');
+  renderCategories();
+  renderCalendar();
+  renderSummary();
+}
+
+// ===== CSV IMPORT =====
+function importCSV() {
+  var input = document.getElementById('csvInput');
+  input.value = '';
+  input.onchange = function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      var lines = ev.target.result.split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+      if (lines.length < 2) return alert('File CSV vuoto o non valido.');
+
+      var cats = loadCategories();
+      var data = loadData();
+      var imported = 0;
+
+      for (var i = 1; i < lines.length; i++) {
+        var parts = lines[i].split(',').map(function(s) { return s.trim(); });
+        if (parts.length < 2) continue;
+        var date = parts[0];
+        var shiftName = parts[1];
+        var note = parts[2] || '';
+
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) continue;
+
+        var cat = cats.find(function(c) { return c.name.toLowerCase() === shiftName.toLowerCase() || c.id === shiftName.toLowerCase(); });
+        if (cat) {
+          data[date] = { catId: cat.id, note: note, ts: Date.now() };
+          imported++;
+        }
+      }
+      saveData(data);
+      renderCalendar();
+      renderSummary();
+      alert('Importati ' + imported + ' turni con successo!');
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+function downloadCSVTemplate() {
+  var cats = loadCategories();
+  var csv = 'data,turno,nota\n';
+  csv += '2026-01-15,' + (cats[0] ? cats[0].name : 'Mattina') + ',Esempio nota\n';
+  csv += '2026-01-16,' + (cats[1] ? cats[1].name : 'Pomeriggio') + ',\n';
+  csv += '2026-01-17,' + (cats[2] ? cats[2].name : 'Notte') + ',\n';
+  var blob = new Blob([csv], { type: 'text/csv' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'template_turni.csv';
+  a.click();
+}
+
+// ===== BACKUP =====
+function exportBackup() {
+  var backup = {
+    version: 1,
+    exportDate: new Date().toISOString(),
+    shifts: loadData(),
+    categories: loadCategories(),
+    theme: LS.getItem('turni_theme') || 'light'
+  };
+  var blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'backup_turni_' + new Date().toISOString().split('T')[0] + '.json';
+  a.click();
+}
+function importBackup() {
+  var input = document.getElementById('backupInput');
+  input.value = '';
+  input.onchange = function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        var backup = JSON.parse(ev.target.result);
+        if (backup.shifts) saveData(backup.shifts);
+        if (backup.categories) saveCategories(backup.categories);
+        if (backup.theme) {
+          LS.setItem('turni_theme', backup.theme);
+          initTheme();
+        }
+        renderCalendar();
+        renderSummary();
+        alert('Backup ripristinato con successo!');
+      } catch (err) {
+        alert('File di backup non valido.');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+function clearAllData() {
+  if (!confirm('Sei sicuro di voler cancellare TUTTI i dati? Questa azione è irreversibile.')) return;
+  if (!confirm('Conferma: cancellare tutti i turni e le categorie?')) return;
+  LS.removeItem('turni_data');
+  LS.removeItem('turni_categories');
+  renderCalendar();
+  renderSummary();
+  alert('Tutti i dati sono stati cancellati.');
+}
+
+// ===== FIREBASE =====
+var db = null;
+var firebaseConnected = false;
+var syncTimeout = null;
+
+function parseFirebaseConfig(raw) {
+  if (!raw) return null;
+  // Normalizza le virgolette curve (intelligenti) in virgolette dritte
+  var t = String(raw)
+    .replace(/[\u201C\u201D]/g, '\u0022')
+    .replace(/[\u2018\u2019]/g, '\u0027');
+  var wanted = ['apiKey','authDomain','projectId','storageBucket','messagingSenderId','appId','measurementId','databaseURL'];
+  var q = '[\u0022\u0027\u0060]'; // ammette  "  '  o  `  come delimitatori
+  var out = {};
+  for (var i = 0; i < wanted.length; i++) {
+    var k = wanted[i];
+    // cerca  key: "valore"  (chiave con o senza virgolette, valore tra qualsiasi tipo di virgolette)
+    var re = new RegExp(q + '?' + k + q + '?\\s*:\\s*' + q + '([^\u0022\u0027\u0060]*)' + q);
+    var m = t.match(re);
+    if (m) out[k] = m[1];
+  }
+  if (!out.apiKey || !out.projectId) return null;
+  return out;
+}
+
+function connectFirebase() {
+  var configStr = document.getElementById('fbConfig').value.trim();
+  var userId = document.getElementById('fbUserId').value.trim();
+  var secret = document.getElementById('fbSecret').value.trim();
+
+  if (!configStr || !userId || !secret) {
+    alert('Compila tutti i campi Firebase.');
+    return;
+  }
+
+  var config = parseFirebaseConfig(configStr);
+  if (!config) {
+    alert('Configurazione Firebase non valida. Incolla l\'oggetto di configurazione (JSON o oggetto JS).');
+    return;
+  }
+
+  saveFirebaseConfig({ config: config, userId: userId, secret: secret });
+
+  updateFirebaseStatus('syncing', '⏳ Caricamento SDK Firebase...');
+  loadFirebaseSDK(function(ok) {
+    if (!ok || typeof firebase === 'undefined') {
+      updateFirebaseStatus('error', '⚠️ SDK Firebase non disponibile qui. Apri il file nel browser (non nell\'anteprima).');
+      return;
+    }
+    try {
+      var app = firebase.initializeApp(config, 'turni_' + Date.now());
+      db = firebase.firestore(app);
+      firebaseConnected = true;
+      updateFirebaseStatus('connected', '✅ Connesso a Firebase — ' + userId);
+      syncFromFirebase();
+    } catch (err) {
+      updateFirebaseStatus('error', '❌ Errore init: ' + (err && err.message ? err.message : err));
+    }
+  });
+}
+
+function loadFirebaseSDK(callback) {
+  if (typeof firebase !== 'undefined' && firebase.firestore) { callback(true); return; }
+  var s1 = document.createElement('script');
+  s1.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js';
+  s1.onerror = function() { callback(false); };
+  s1.onload = function() {
+    var s2 = document.createElement('script');
+    s2.src = 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js';
+    s2.onerror = function() { callback(false); };
+    s2.onload = function() { callback(typeof firebase !== 'undefined'); };
+    document.head.appendChild(s2);
+  };
+  document.head.appendChild(s1);
+}
+
+function initFirebaseFromSaved() {
+  var saved = loadFirebaseConfig();
+  if (!saved) return;
+
+  try {
+    if (saved.config) document.getElementById('fbConfig').value = (typeof saved.config === 'string') ? saved.config : JSON.stringify(saved.config, null, 2);
+    if (saved.userId) document.getElementById('fbUserId').value = saved.userId;
+    if (saved.secret) document.getElementById('fbSecret').value = saved.secret;
+  } catch (e) { /* campi non ancora presenti */ }
+
+  loadFirebaseSDK(function(ok) {
+    if (!ok || typeof firebase === 'undefined') {
+      updateFirebaseStatus('offline', 'ℹ️ Solo locale — apri nel browser per il cloud.');
+      return;
+    }
+    try {
+      var app = firebase.initializeApp(saved.config, 'turni_' + Date.now());
+      db = firebase.firestore(app);
+      firebaseConnected = true;
+      updateFirebaseStatus('connected', '✅ Connesso a Firebase — ' + saved.userId);
+      syncFromFirebase();
+    } catch (err) {
+      updateFirebaseStatus('error', '⚠️ Auto-connessione fallita: ' + (err && err.message ? err.message : err));
+    }
+  });
+}
+
+function syncToFirebase() {
+  if (!firebaseConnected || !db) return;
+  var saved = loadFirebaseConfig();
+  if (!saved) return;
+
+  var payload = {
+    shifts: loadData(),
+    categories: loadCategories(),
+    secret: saved.secret,
+    lastSync: Date.now()
+  };
+
+  db.collection('trackers').doc('turni_' + saved.userId).set(payload)
+    .then(function() { updateFirebaseStatus('connected', '✅ Sincronizzato — ' + new Date().toLocaleTimeString()); })
+    .catch(function(err) { updateFirebaseStatus('error', '❌ Sync fallita: ' + err.message); });
+}
+
+function syncFromFirebase() {
+  if (!firebaseConnected || !db) return;
+  var saved = loadFirebaseConfig();
+  if (!saved) return;
+
+  db.collection('trackers').doc('turni_' + saved.userId).get()
+    .then(function(doc) {
+      if (doc.exists) {
+        var remote = doc.data();
+        if (remote.secret !== saved.secret) {
+          updateFirebaseStatus('error', '❌ Chiave segreta non corrispondente!');
+          return;
+        }
+        if (remote.shifts) {
+          var local = loadData();
+          var merged = {};
+          var keys = Object.keys(remote.shifts);
+          for (var i = 0; i < keys.length; i++) { merged[keys[i]] = remote.shifts[keys[i]]; }
+          var localKeys = Object.keys(local);
+          for (var i = 0; i < localKeys.length; i++) {
+            var k = localKeys[i];
+            if (!merged[k] || (local[k].ts && (!merged[k].ts || local[k].ts > merged[k].ts))) {
+              merged[k] = local[k];
+            }
+          }
+          saveDataNoSync(merged);
+        }
+        if (remote.categories) {
+          LS.setItem('turni_categories', JSON.stringify(remote.categories));
+        }
+        renderCalendar();
+        renderSummary();
+        updateFirebaseStatus('connected', '✅ Sincronizzato — ' + new Date().toLocaleTimeString());
+        syncToFirebase();
+      } else {
+        syncToFirebase();
+      }
+    })
+    .catch(function(err) { updateFirebaseStatus('error', '❌ Lettura fallita: ' + err.message); });
+}
+
+function syncFirebase() {
+  if (!firebaseConnected) { alert('Firebase non connesso.'); return; }
+  syncFromFirebase();
+}
+
+function disconnectFirebase() {
+  firebaseConnected = false;
+  db = null;
+  LS.removeItem('turni_fb_config');
+  document.getElementById('fbConfig').value = '';
+  document.getElementById('fbUserId').value = '';
+  document.getElementById('fbSecret').value = '';
+  updateFirebaseStatus('', '⚡ Solo locale — cloud non configurato');
+}
+
+function scheduleSync() {
+  if (!firebaseConnected) return;
+  clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(syncToFirebase, 2000);
+}
+
+function updateFirebaseStatus(type, msg) {
+  var el = document.getElementById('firebaseStatus');
+  var bar = document.getElementById('statusBar');
+  el.textContent = msg;
+  el.style.background = type === 'connected' ? '#e8f5e9' : type === 'error' ? '#ffebee' : '#fff3e0';
+  el.style.color = type === 'connected' ? '#2e7d32' : type === 'error' ? '#c62828' : '#e65100';
+  bar.textContent = msg;
+  bar.className = 'status-bar' + (type === 'connected' ? ' connected' : type === 'error' ? ' error' : '');
+}
+
+// ===== PASSWORD TOGGLE =====
+function togglePw(id, btn) {
+  var input = document.getElementById(id);
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.textContent = '🔒';
+  } else {
+    input.type = 'password';
+    btn.textContent = '👁️';
+  }
+}
+
+// ===== MODAL =====
+function closeModal(id) {
+  document.getElementById(id).classList.remove('show');
+}
+try {
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList && e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('show');
+    }
+  });
+} catch (e) { console.warn('click listener:', e); }
+
+// ===== INIT =====
+try { initTheme(); } catch (e) { console.warn('initTheme:', e); }
+try { renderCalendar(); } catch (e) { console.warn('renderCalendar:', e); }
+try { renderSummary(); } catch (e) { console.warn('renderSummary:', e); }
+
+// Precompila la configurazione Firebase predefinita (se il campo è vuoto)
+try {
+  var fbField = document.getElementById('fbConfig');
+  if (fbField && !fbField.value.trim()) { fbField.value = DEFAULT_FB_CONFIG; }
+} catch (e) { console.warn('default fb config:', e); }
+
+// Auto-connect Firebase if saved (config + utente + chiave già salvati)
+try {
+  var savedFb = loadFirebaseConfig();
+  if (savedFb) {
+    initFirebaseFromSaved();
+  }
+} catch (e) { console.warn('firebase auto-init:', e); }
+</script>
+
+
+</body></html>
