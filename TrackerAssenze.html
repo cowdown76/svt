@@ -589,15 +589,11 @@ a { color: var(--color-link, var(--color-primary)); }</style>
     </div>
     <div class="panel">
       <h2>Sincronizzazione cloud (Firebase)</h2>
-      <p class="muted mb12">Opzionale. Sincronizza i dati tra i tuoi dispositivi. Se non la configuri, l'app funziona in locale con Backup/Ripristino.</p>
+      <p class="muted mb12">Inserisci nome utente e password per sincronizzare i dati tra i tuoi dispositivi. Il collegamento al database è già configurato.</p>
       <div id="cloudStatus" class="cloud-status offline"><span class="dot"></span><span id="cloudStatusText">Solo locale — cloud non configurato</span></div>
-      <div class="field mt8"><label>Configurazione Firebase (incolla l'oggetto firebaseConfig)</label>
-        <textarea id="fbConfig" rows="7" placeholder="{ apiKey: '...', authDomain: '...', projectId: '...', appId: '...' }"></textarea>
-        <div class="hint">Firebase Console → Impostazioni progetto → Le tue app → App web.</div>
-      </div>
       <div class="field-row">
-        <div class="field"><label>ID spazio dati (utente)</label><input type="text" id="fbSpaceId" placeholder="es. mariano"><div class="hint">Utenti diversi = ID diversi.</div></div>
-        <div class="field"><label>Chiave segreta</label><input type="text" id="fbChiave" placeholder="una passphrase a tua scelta"><div class="hint">Stessa su tutti i tuoi dispositivi.</div></div>
+        <div class="field"><label>Nome utente</label><input type="text" id="fbSpaceId" placeholder="es. mariano" autocomplete="username"><div class="hint">Identifica il tuo spazio dati. Utenti diversi = dati separati.</div></div>
+        <div class="field"><label>Password</label><div style="position:relative"><input type="password" id="fbChiave" placeholder="la tua password" autocomplete="current-password" style="padding-right:38px"><button type="button" id="fbChiaveToggle" title="Mostra/nascondi" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);border:none;background:none;padding:4px 6px;cursor:pointer;font-size:15px;color:var(--text-muted);line-height:1">👁</button></div><div class="hint">Stessa su tutti i tuoi dispositivi.</div></div>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <button class="btn-primary" id="btnCloudConnect">Connetti e sincronizza</button>
@@ -734,6 +730,14 @@ var editingAbsId=null, editingCatId=null, editingHolId=null, ovKey=null, ovMode=
 var absHoursTouched=false;
 var fbApp=null, fbDb=null, fbUnsub=null, cloudOn=false, applyingRemote=false, fbSdkLoading=false, fbSdkQueue=[];
 var CLOUD_CFG_KEY='trackerAssenze_cloudCfg_v1';
+var EMBEDDED_FB_CONFIG={
+  apiKey:"AIzaSyAZenJZEcR9NcYxkOw91ouM658KFvUkaHs",
+  authDomain:"tracker-assenze-svt.firebaseapp.com",
+  projectId:"tracker-assenze-svt",
+  storageBucket:"tracker-assenze-svt.firebasestorage.app",
+  messagingSenderId:"973118167909",
+  appId:"1:973118167909:web:248877eb4900e065d95f8c"
+};
 var clientId=(Math.random().toString(36).slice(2)+Date.now().toString(36));
 
 function loadState(){
@@ -1493,14 +1497,10 @@ function parseFbConfig(raw){
   return out;
 }
 function cloudConnect(showMsg){
-  var raw=document.getElementById('fbConfig').value.trim();
   var spaceId=document.getElementById('fbSpaceId').value.trim();
   var chiave=document.getElementById('fbChiave').value.trim();
-  if(!raw){ toast('Incolla la configurazione Firebase'); return; }
-  if(!spaceId||!chiave){ toast('Inserisci ID spazio e chiave segreta'); return; }
-  var cfg;
-  try{ cfg=parseFbConfig(raw); }catch(e){ setCloudStatus('error','Configurazione non valida'); toast('Config Firebase non valida'); return; }
-  if(!cfg.projectId||!cfg.apiKey){ setCloudStatus('error','Config incompleta'); toast('Mancano apiKey/projectId'); return; }
+  if(!spaceId||!chiave){ toast('Inserisci nome utente e password'); return; }
+  var cfg=EMBEDDED_FB_CONFIG;
   setCloudStatus('syncing','Caricamento SDK...');
   ensureSDK(function(ok){
     if(!ok||typeof firebase==='undefined'){ setCloudStatus('error','SDK non disponibile (apri via http, non in anteprima)'); toast('Firebase non caricabile qui'); return; }
@@ -1510,7 +1510,7 @@ function cloudConnect(showMsg){
       fbApp=firebase.initializeApp(cfg,'tracker_'+Date.now());
       fbDb=firebase.firestore(fbApp);
     }catch(e){ setCloudStatus('error','Errore init'); toast('Errore init Firebase'); return; }
-    saveCloudCfg({raw:raw,spaceId:spaceId,chiave:chiave});
+    saveCloudCfg({spaceId:spaceId,chiave:chiave});
     var ref=fbDb.collection('trackers').doc(docIdFrom(spaceId,chiave));
     setCloudStatus('syncing','Connessione...');
     ref.get().then(function(snap){
@@ -1559,15 +1559,19 @@ function cloudDisconnect(){
 }
 function initCloud(){
   var cfg=loadCloudCfg();
-  if(cfg.raw) document.getElementById('fbConfig').value=cfg.raw;
   if(cfg.spaceId) document.getElementById('fbSpaceId').value=cfg.spaceId;
   if(cfg.chiave) document.getElementById('fbChiave').value=cfg.chiave;
-  if(cfg.raw&&cfg.spaceId&&cfg.chiave){ cloudConnect(false); }
-  else setCloudStatus('offline','Solo locale \u2014 cloud non configurato');
+  if(cfg.spaceId&&cfg.chiave){ cloudConnect(false); }
+  else setCloudStatus('offline','Solo locale \u2014 inserisci utente e password');
 }
 document.getElementById('btnCloudConnect').onclick=function(){ cloudConnect(true); };
 document.getElementById('btnCloudSync').onclick=function(){ cloudPush(); toast('Sincronizzazione forzata'); };
 document.getElementById('btnCloudDisconnect').onclick=cloudDisconnect;
+document.getElementById('fbChiaveToggle').onclick=function(){
+  var inp=document.getElementById('fbChiave');
+  if(inp.type==='password'){ inp.type='text'; this.textContent='\uD83D\uDE48'; this.title='Nascondi'; }
+  else { inp.type='password'; this.textContent='\uD83D\uDC41'; this.title='Mostra'; }
+};
 
 function isoLocal(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
 // quando cambio anno con le frecce: allinea refDate a quell'anno.
